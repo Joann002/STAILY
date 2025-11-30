@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+
+# Environnement virtuel Python
+venv/
+__pycache__/
+*.pyc
+
+# Fichiers uploadés
+uploads/
+
+# Fichiers audio temporaires
+tmp/
+
+# Variables d'environnement
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
