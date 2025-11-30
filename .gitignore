@@ -1,6 +1,5 @@
 # Documentation (sauf README.md)
 *.md
-!README.md
 
 # IDE
 .vscode/
