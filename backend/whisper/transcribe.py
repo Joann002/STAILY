@@ -10,7 +10,7 @@ import os
 from pathlib import Path
 from faster_whisper import WhisperModel
 
-def transcribe_audio(audio_path, model_size="base", language=None):
+def transcribe_audio(audio_path, model_size="large-v3", language=None):
     """
     Transcrit un fichier audio avec faster-whisper
     
@@ -70,7 +70,8 @@ def transcribe_audio(audio_path, model_size="base", language=None):
             "end": round(segment.end, 2),
             "text": segment.text.strip()
         })
-        print(f"  [{segment.start:.2f}s → {segment.end:.2f}s] {segment.text.strip()}", file=sys.stderr)
+        # Logs désactivés pour ne pas encombrer le terminal
+        # print(f"  [{segment.start:.2f}s → {segment.end:.2f}s] {segment.text.strip()}", file=sys.stderr)
     
     print(f"✅ Transcription terminée: {len(result['segments'])} segments", file=sys.stderr)
     
@@ -88,7 +89,7 @@ def main():
         sys.exit(1)
     
     audio_path = sys.argv[1]
-    model_size = sys.argv[2] if len(sys.argv) > 2 else "base"
+    model_size = sys.argv[2] if len(sys.argv) > 2 else "large-v3"
     language = sys.argv[3] if len(sys.argv) > 3 else None
     
     try:

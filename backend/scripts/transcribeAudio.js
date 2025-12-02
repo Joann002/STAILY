@@ -14,7 +14,7 @@ const fs = require('fs');
  * @param {string} language - Code langue (fr, en, etc.) ou null pour auto-détection
  * @returns {Promise<object>} - Résultat de transcription avec segments
  */
-function transcribeAudio(audioPath, modelSize = 'base', language = null) {
+function transcribeAudio(audioPath, modelSize = 'large-v3', language = null) {
   return new Promise((resolve, reject) => {
     // Vérifier que le fichier audio existe
     if (!fs.existsSync(audioPath)) {
@@ -105,7 +105,7 @@ function readTranscriptionJSON(jsonPath) {
 // Permettre l'utilisation en ligne de commande
 if (require.main === module) {
   const audioPath = process.argv[2];
-  const modelSize = process.argv[3] || 'base';
+  const modelSize = process.argv[3] || 'large-v3';
   const language = process.argv[4] || null;
 
   if (!audioPath) {

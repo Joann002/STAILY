@@ -1,27 +1,34 @@
-# Dépendances
-node_modules/
-
-# Environnement virtuel Python
-venv/
-__pycache__/
-*.pyc
-
-# Fichiers uploadés
+# Dossiers de fichiers uploadés et temporaires
 uploads/
-
-# Fichiers audio temporaires
 tmp/
+cache/
 
 # Variables d'environnement
 .env
+.env.local
 
 # Logs
 *.log
 npm-debug.log*
 
-# Système
+# Dépendances
+node_modules/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
 .DS_Store
 Thumbs.db
 
-# Documentation
-*.md
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers de test
+output.srt

@@ -1,0 +1,91 @@
+{
+  "audioQualityThresholds": {
+    "minMeanVolume": -40,
+    "minMaxVolume": -20,
+    "maxSilencePercent": 80,
+    "minNonSilenceDuration": 2,
+    "silenceThreshold": -50,
+    "silenceMinDuration": 0.5
+  },
+  "transcriptionQualityThresholds": {
+    "minNonEmptySegmentsPercent": 30,
+    "minAvgTokensPerSegment": 3,
+    "minLanguageProbability": 0.5,
+    "maxLowProbabilitySegmentsPercent": 50,
+    "lowProbabilityThreshold": 0.3,
+    "minTotalCharacters": 10,
+    "minUniqueWordsRatio": 0.3
+  },
+  "enhancementPresets": {
+    "light": {
+      "normalize": true,
+      "volumeGain": 0,
+      "highpass": 200,
+      "lowpass": null,
+      "noiseReduction": false,
+      "compressor": false
+    },
+    "standard": {
+      "normalize": true,
+      "volumeGain": 5,
+      "highpass": 200,
+      "lowpass": 3000,
+      "noiseReduction": true,
+      "compressor": true
+    },
+    "aggressive": {
+      "normalize": true,
+      "volumeGain": 10,
+      "highpass": 300,
+      "lowpass": 3000,
+      "noiseReduction": true,
+      "compressor": true,
+      "denoiseStrength": 0.1
+    }
+  },
+  "whisperFallbackStrategies": [
+    {
+      "name": "BASE_STANDARD",
+      "modelSize": "base",
+      "description": "Modèle base avec paramètres standards"
+    },
+    {
+      "name": "MEDIUM_ROBUST",
+      "modelSize": "medium",
+      "description": "Modèle medium plus robuste"
+    },
+    {
+      "name": "SMALL_BALANCED",
+      "modelSize": "small",
+      "description": "Modèle small équilibré"
+    }
+  ],
+  "defaultOptions": {
+    "modelSize": "base",
+    "language": null,
+    "autoEnhance": true,
+    "useFallback": true,
+    "useGPTCorrection": true,
+    "saveSRT": true
+  },
+  "recommendedOptions": {
+    "goodAudio": {
+      "modelSize": "base",
+      "autoEnhance": false,
+      "useFallback": false,
+      "useGPTCorrection": false
+    },
+    "mediumAudio": {
+      "modelSize": "base",
+      "autoEnhance": true,
+      "useFallback": true,
+      "useGPTCorrection": true
+    },
+    "poorAudio": {
+      "modelSize": "medium",
+      "autoEnhance": true,
+      "useFallback": true,
+      "useGPTCorrection": true
+    }
+  }
+}

@@ -7,22 +7,32 @@ const fs = require('fs');
 // Importation des routes
 const uploadRouter = require('./routes/upload');
 const transcribeRouter = require('./routes/transcribe');
+const transcribeCompleteRouter = require('./routes/transcribe-complete');
+const transcribeRobustRouter = require('./routes/transcribe-robust');
+const applyRulesRouter = require('./routes/apply-rules');
 
 // Initialisation de l'application Express
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-// Création du dossier uploads s'il n'existe pas
+// Création des dossiers nécessaires s'ils n'existent pas
 const uploadsDir = path.join(__dirname, 'uploads');
+const cacheDir = path.join(__dirname, 'cache');
+
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
   console.log('📁 Dossier uploads/ créé');
 }
 
+if (!fs.existsSync(cacheDir)) {
+  fs.mkdirSync(cacheDir, { recursive: true });
+  console.log('📁 Dossier cache/ créé');
+}
+
 // Middlewares
 app.use(cors()); // Permet les requêtes cross-origin (utile pour Next.js)
-app.use(express.json()); // Parse les requêtes JSON
-app.use(express.urlencoded({ extended: true })); // Parse les données de formulaire
+app.use(express.json({ limit: '500mb' })); // Parse les requêtes JSON avec limite augmentée
+app.use(express.urlencoded({ extended: true, limit: '500mb' })); // Parse les données de formulaire
 
 // Servir les fichiers statiques (uploads et tmp)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -33,9 +43,13 @@ app.get('/', (req, res) => {
   res.json({
     message: '🚀 Serveur Express opérationnel',
     endpoints: {
-      upload: 'POST /upload - Upload de fichiers audio/vidéo (.mp4, .mp3, .wav)',
+      upload: 'POST /upload - Upload de fichiers audio/vidéo (.mp4, .mkv, .mp3, .wav)',
       transcribe: 'POST /transcribe - Extraction audio + transcription Whisper',
-      status: 'GET /transcribe/status - Vérifier les prérequis (FFmpeg, Python, Whisper)'
+      transcribeComplete: 'POST /transcribe-complete - Pipeline complet avec cache intelligent (Whisper + Nettoyage + GPT + SRT)',
+      transcribeRobust: 'POST /transcribe-robust - Pipeline ROBUSTE avec gestion automatique de qualité audio (Analyse + Amélioration + Fallbacks + GPT)',
+      applyRules: 'POST /apply-rules - Application des règles de Verbatim Corrigé avec GPT-4o-mini',
+      status: 'GET /transcribe/status - Vérifier les prérequis (FFmpeg, Python, Whisper)',
+      cacheInspect: 'CLI: node backend/utils/inspectCache.js - Gérer le cache'
     }
   });
 });
@@ -43,6 +57,9 @@ app.get('/', (req, res) => {
 // Montage des routes
 app.use('/upload', uploadRouter);
 app.use('/transcribe', transcribeRouter);
+app.use('/transcribe-complete', transcribeCompleteRouter);
+app.use('/transcribe-robust', transcribeRobustRouter);
+app.use('/apply-rules', applyRulesRouter);
 
 // Middleware de gestion des erreurs
 app.use((err, req, res, next) => {
@@ -56,5 +73,6 @@ app.use((err, req, res, next) => {
 // Démarrage du serveur
 app.listen(PORT, () => {
   console.log(`✅ Serveur démarré sur http://localhost:${PORT}`);
-  console.log(`📂 Les fichiers seront sauvegardés dans: ${uploadsDir}`);
+  console.log(`📂 Uploads: ${uploadsDir}`);
+  console.log(`💾 Cache: ${cacheDir}`);
 });

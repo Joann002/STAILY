@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
   
   try {
     // 1. Récupérer les paramètres
-    const { filePath, modelSize = 'base', language = null } = req.body;
+    const { filePath, modelSize = 'large-v3', language = null } = req.body;
     
     console.log('\n🎬 === DÉBUT TRANSCRIPTION ===');
     console.log(`📁 Fichier: ${filePath}`);
@@ -59,7 +59,7 @@ router.post('/', async (req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     let audioPath;
     
-    if (ext === '.mp4') {
+    if (ext === '.mp4' || ext === '.mkv') {
       // Extraction audio nécessaire pour les vidéos
       console.log('\n🎵 ÉTAPE 1/2: Extraction audio...');
       try {
@@ -82,7 +82,7 @@ router.post('/', async (req, res) => {
       console.log(`❌ Format non supporté: ${ext}`);
       return res.status(400).json({
         success: false,
-        error: `Format de fichier non supporté: ${ext}. Formats acceptés: .mp4, .mp3, .wav`
+        error: `Format de fichier non supporté: ${ext}. Formats acceptés: .mp4, .mkv, .mp3, .wav`
       });
     }
     

@@ -1,0 +1,20 @@
+{
+  "blacklist": [
+    "euh",
+    "mmh",
+    "hum",
+    "ben",
+    "voilà",
+    "quoi"
+  ],
+  "replacements": {
+    "mp3": "MP3",
+    "youtube": "YouTube",
+    "api": "API",
+    "json": "JSON",
+    "javascript": "JavaScript",
+    "nodejs": "Node.js",
+    "ok": "OK"
+  },
+  "maxLineLength": 42
+}

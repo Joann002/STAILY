@@ -38,24 +38,28 @@ const storage = multer.diskStorage({
 // Fonction de validation des types de fichiers
 const fileFilter = (req, file, cb) => {
   // Extensions autorisées
-  const allowedExtensions = ['.mp4', '.mp3', '.wav'];
+  const allowedExtensions = ['.mp4', '.mkv', '.mp3', '.wav'];
   const ext = path.extname(file.originalname).toLowerCase();
   
-  // Types MIME autorisés
+  // Types MIME autorisés (pour validation supplémentaire)
   const allowedMimeTypes = [
-    'audio/mpeg',      // .mp3
-    'audio/wav',       // .wav
-    'audio/wave',      // .wav (alternative)
-    'audio/x-wav',     // .wav (alternative)
-    'video/mp4'        // .mp4
+    'audio/mpeg',           // .mp3
+    'audio/wav',            // .wav
+    'audio/wave',           // .wav (alternative)
+    'audio/x-wav',          // .wav (alternative)
+    'video/mp4',            // .mp4
+    'video/x-matroska',     // .mkv
+    'video/x-msvideo',      // .avi
+    'application/octet-stream' // Fallback pour fichiers non reconnus
   ];
   
-  // Vérification de l'extension ET du type MIME
-  if (allowedExtensions.includes(ext) && allowedMimeTypes.includes(file.mimetype)) {
+  // Vérification prioritaire de l'extension (plus fiable que MIME)
+  if (allowedExtensions.includes(ext)) {
     console.log(`✅ Fichier accepté: ${file.originalname} (${file.mimetype})`);
     cb(null, true);
   } else {
     console.log(`❌ Fichier rejeté: ${file.originalname} (${file.mimetype})`);
+    console.log(`   Extension détectée: ${ext}`);
     cb(new Error(`Type de fichier non autorisé. Formats acceptés: ${allowedExtensions.join(', ')}`), false);
   }
 };
@@ -65,7 +69,7 @@ const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 100 * 1024 * 1024 // Limite de 100 MB
+    fileSize: 500 * 1024 * 1024 // Limite de 500 MB
   }
 });
 
@@ -99,8 +103,11 @@ router.post('/', upload.single('file'), async (req, res) => {
       }
     };
     
-    // Si c'est un fichier vidéo (.mp4), extraire l'audio automatiquement
-    if (req.file.mimetype === 'video/mp4') {
+    // Si c'est un fichier vidéo (.mp4, .mkv), extraire l'audio automatiquement
+    const ext = path.extname(req.file.originalname).toLowerCase();
+    const isVideo = ext === '.mp4' || ext === '.mkv';
+    
+    if (isVideo) {
       try {
         console.log('🎬 Extraction audio en cours...');
         const audioPath = await extractAudio(req.file.path);
