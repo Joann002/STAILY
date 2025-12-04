@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     const savedTranscription = sessionStorage.getItem('transcription');
     const savedUploadedFile = sessionStorage.getItem('uploadedFile');
-    
+
     if (savedTranscription && savedUploadedFile) {
       setTranscription(JSON.parse(savedTranscription));
       setUploadedFile(JSON.parse(savedUploadedFile));
@@ -34,6 +34,12 @@ export default function Home() {
       setError(null);
       setUploadedFile(null);
       setTranscription(null);
+
+      // Nettoyer les anciennes données de sessionStorage
+      sessionStorage.removeItem('transcription');
+      sessionStorage.removeItem('uploadedFile');
+      sessionStorage.removeItem('transcriptionMetadata');
+      sessionStorage.removeItem('correctedTranscription'); // ✅ Nettoyer l'ancienne correction GPT
     }
   };
 
@@ -64,13 +70,16 @@ export default function Home() {
       console.log('Upload réussi:', data);
       setUploadedFile(data);
       setHasUploaded(true); // ✅ Activer la vue 2 colonnes
-      
+
       // Sauvegarder dans sessionStorage
       sessionStorage.setItem('uploadedFile', JSON.stringify(data));
-      
+
+      // Nettoyer l'ancienne correction GPT pour éviter qu'elle s'affiche avec la nouvelle vidéo
+      sessionStorage.removeItem('correctedTranscription');
+
       // Lancer automatiquement la transcription
       await handleTranscribe(data.file.relativePath);
-      
+
     } catch (err: any) {
       console.error('Erreur upload:', err);
       setError(err.message);
@@ -83,7 +92,7 @@ export default function Home() {
   // Transcription du fichier avec cache
   const handleTranscribe = async (filePath?: string) => {
     const pathToTranscribe = filePath || uploadedFile?.file?.relativePath;
-    
+
     if (!pathToTranscribe) {
       alert('Aucun fichier à transcrire');
       return;
@@ -117,10 +126,10 @@ export default function Home() {
       const data = await response.json();
       console.log('Transcription réussie:', data);
       setTranscription(data);
-      
+
       // Sauvegarder dans sessionStorage
       sessionStorage.setItem('transcription', JSON.stringify(data));
-      
+
     } catch (err: any) {
       console.error('Erreur transcription:', err);
       setError(err.message);
@@ -137,11 +146,12 @@ export default function Home() {
     setUploadedFile(null);
     setTranscription(null);
     setError(null);
-    
+
     // Nettoyer sessionStorage
     sessionStorage.removeItem('transcription');
     sessionStorage.removeItem('uploadedFile');
     sessionStorage.removeItem('transcriptionMetadata');
+    sessionStorage.removeItem('correctedTranscription'); // ✅ Nettoyer l'ancienne correction GPT
   };
 
   return (
@@ -164,7 +174,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
               📤 Upload de fichier
             </h2>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -200,9 +210,9 @@ export default function Home() {
                          text-white font-semibold py-3 px-6 rounded-lg 
                          transition-colors duration-200 disabled:cursor-not-allowed"
               >
-                {uploading ? '⏳ Upload en cours...' : 
-                 transcribing ? '🎤 Transcription en cours...' : 
-                 '🚀 Upload et Transcrire'}
+                {uploading ? '⏳ Upload en cours...' :
+                  transcribing ? '🎤 Transcription en cours...' :
+                    '🚀 Upload et Transcrire'}
               </button>
             </div>
           </div>
@@ -225,7 +235,7 @@ export default function Home() {
               <li>Attendez la transcription (avec cache intelligent)</li>
               <li>Consultez les résultats avec timestamps</li>
             </ol>
-            
+
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-sm text-blue-800 dark:text-blue-200">
                 <strong>💾 Cache intelligent:</strong> Si vous uploadez la même vidéo, la transcription sera instantanée !
@@ -255,7 +265,7 @@ export default function Home() {
                       ← Nouveau fichier
                     </button>
                   </div>
-                  
+
                   {/* Vidéo */}
                   {(uploadedFile.file.mimetype === 'video/mp4' || uploadedFile.file.mimetype === 'video/x-matroska') && (
                     <video
@@ -266,7 +276,7 @@ export default function Home() {
                       Votre navigateur ne supporte pas la lecture vidéo.
                     </video>
                   )}
-                  
+
                   {/* Audio simple (WAV) */}
                   {uploadedFile.file.mimetype === 'audio/wav' && (
                     <audio
@@ -277,7 +287,7 @@ export default function Home() {
                       Votre navigateur ne supporte pas la lecture audio.
                     </audio>
                   )}
-                  
+
                   <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
                     <p><strong>Fichier:</strong> {uploadedFile.file.originalName}</p>
                     <p><strong>Taille:</strong> {uploadedFile.file.sizeInMB} MB</p>
@@ -356,14 +366,14 @@ export default function Home() {
                         {transcription.raw?.language?.toUpperCase() || 'N/A'}
                       </p>
                     </div>
-                    
+
                     <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 text-center">
                       <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">Durée</p>
                       <p className="text-lg font-bold text-blue-800 dark:text-blue-200">
                         {transcription.raw?.duration?.toFixed(1) || 0}s
                       </p>
                     </div>
-                    
+
                     <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3 text-center">
                       <p className="text-xs text-purple-600 dark:text-purple-400 font-medium">Segments</p>
                       <p className="text-lg font-bold text-purple-800 dark:text-purple-200">
