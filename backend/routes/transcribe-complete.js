@@ -9,7 +9,7 @@ const fs = require('fs');
 const { extractAudio } = require('../scripts/extractAudio');
 const { transcribeAudio } = require('../scripts/transcribeAudio');
 const { applyRulesToTranscription, generateCleanedText } = require('../services/applyRules');
-const { formatWithGPT, generateSRTFile } = require('../services/gptFormatter');
+// const { formatWithGPT, generateSRTFile } = require('./gptFormatter'); // ⚠️ GPT supprimé
 const { computeHash, isCached, saveCache, loadCache } = require('../services/cacheManager');
 
 const router = express.Router();
@@ -142,30 +142,11 @@ router.post('/', async (req, res) => {
     const cleanedText = generateCleanedText(cleanedSegments);
     console.log(`✅ Segments nettoyés: suppression filler words, corrections casse`);
     
-    // ÉTAPE 4: Formatage GPT (optionnel)
+    // ÉTAPE 4: Formatage GPT (DÉSACTIVÉ)
     let gptResult = null;
     let srtContent = null;
     
-    if (useGPT) {
-      console.log('\n📍 ÉTAPE 4/4: Formatage GPT-4o-mini...');
-      
-      const apiKey = process.env.OPENAI_API_KEY;
-      if (!apiKey) {
-        console.log('⚠️  OPENAI_API_KEY non définie, formatage GPT ignoré');
-      } else {
-        try {
-          gptResult = await formatWithGPT(cleanedSegments, apiKey);
-          srtContent = generateSRTFile(gptResult.srt);
-          console.log(`✅ Formatage GPT terminé: ${gptResult.srt.length} sous-titres`);
-          console.log(`📝 Résumé: ${gptResult.summary}`);
-        } catch (gptError) {
-          console.error(`⚠️  Erreur GPT: ${gptError.message}`);
-          console.log('   → Continuation sans formatage GPT');
-        }
-      }
-    } else {
-      console.log('\n📍 ÉTAPE 4/4: Formatage GPT désactivé');
-    }
+    console.log('\n📍 ÉTAPE 4/4: Formatage GPT désactivé (fonctionnalité supprimée)');
     
     // Sauvegarder le fichier SRT
     let srtPath = null;

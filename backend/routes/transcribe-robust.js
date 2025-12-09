@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
       language = null,
       autoEnhance = true,
       useFallback = true,
-      useGPTCorrection = true,
+      useGPTCorrection = false, // ⚠️ GPT désactivé
       saveSRT = true,
       useCache = true
     } = req.body;
@@ -147,7 +147,8 @@ router.post('/', async (req, res) => {
       autoEnhance,
       useFallback,
       useGPTCorrection,
-      openaiApiKey: process.env.OPENAI_API_KEY
+      openaiApiKey: process.env.OPENAI_API_KEY,
+      fileHash  // Passer le hash du fichier pour un cache GPT unique par vidéo
     });
     
     // Vérifier si la transcription a réussi

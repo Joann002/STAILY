@@ -9,7 +9,7 @@ const uploadRouter = require('./routes/upload');
 const transcribeRouter = require('./routes/transcribe');
 const transcribeCompleteRouter = require('./routes/transcribe-complete');
 const transcribeRobustRouter = require('./routes/transcribe-robust');
-const applyRulesRouter = require('./routes/apply-rules');
+const applyVerbatimRouter = require('./routes/apply-verbatim');
 
 // Initialisation de l'application Express
 const app = express();
@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 3002;
 // Création des dossiers nécessaires s'ils n'existent pas
 const uploadsDir = path.join(__dirname, 'uploads');
 const cacheDir = path.join(__dirname, 'cache');
+const gptCacheDir = path.join(__dirname, 'cache', 'gpt');
 
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
@@ -27,6 +28,11 @@ if (!fs.existsSync(uploadsDir)) {
 if (!fs.existsSync(cacheDir)) {
   fs.mkdirSync(cacheDir, { recursive: true });
   console.log('📁 Dossier cache/ créé');
+}
+
+if (!fs.existsSync(gptCacheDir)) {
+  fs.mkdirSync(gptCacheDir, { recursive: true });
+  console.log('📁 Dossier cache/gpt/ créé');
 }
 
 // Middlewares
@@ -48,6 +54,10 @@ app.get('/', (req, res) => {
       transcribeComplete: 'POST /transcribe-complete - Pipeline complet avec cache intelligent (Whisper + Nettoyage + GPT + SRT)',
       transcribeRobust: 'POST /transcribe-robust - Pipeline ROBUSTE avec gestion automatique de qualité audio (Analyse + Amélioration + Fallbacks + GPT)',
       applyRules: 'POST /apply-rules - Application des règles de Verbatim Corrigé avec GPT-4o-mini',
+      gptCacheStats: 'GET /gpt-cache/stats - Statistiques du cache GPT',
+      gptCacheList: 'GET /gpt-cache/list - Liste des caches GPT',
+      gptCacheDelete: 'DELETE /gpt-cache/:hash - Supprimer un cache GPT',
+      gptCacheClean: 'POST /gpt-cache/clean - Nettoyer les caches GPT anciens',
       status: 'GET /transcribe/status - Vérifier les prérequis (FFmpeg, Python, Whisper)',
       cacheInspect: 'CLI: node backend/utils/inspectCache.js - Gérer le cache'
     }
@@ -59,7 +69,7 @@ app.use('/upload', uploadRouter);
 app.use('/transcribe', transcribeRouter);
 app.use('/transcribe-complete', transcribeCompleteRouter);
 app.use('/transcribe-robust', transcribeRobustRouter);
-app.use('/apply-rules', applyRulesRouter);
+app.use('/apply-verbatim', applyVerbatimRouter);
 
 // Middleware de gestion des erreurs
 app.use((err, req, res, next) => {

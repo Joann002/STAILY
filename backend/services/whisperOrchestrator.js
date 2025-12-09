@@ -7,7 +7,7 @@ const { checkAudioQuality } = require('./audioQualityChecker');
 const { autoEnhance } = require('./audioEnhancer');
 const { analyzeTranscriptionQuality } = require('./transcriptionQualityAnalyzer');
 const { transcribeAudio } = require('../scripts/transcribeAudio');
-const { formatWithGPT } = require('./gptFormatter');
+// const { formatWithGPT } = require('./gptFormatter'); // ⚠️ GPT supprimé
 const path = require('path');
 const fs = require('fs');
 
@@ -83,6 +83,7 @@ const WHISPER_FALLBACK_STRATEGIES = [
  * @param {boolean} options.useFallback - Utiliser les fallbacks (défaut: true)
  * @param {boolean} options.useGPTCorrection - Correction GPT si qualité faible (défaut: true)
  * @param {string} options.openaiApiKey - Clé API OpenAI
+ * @param {string} options.fileHash - Hash du fichier vidéo source (pour cache GPT unique)
  * @returns {Promise<OrchestrationResult>}
  */
 async function orchestrateTranscription(audioPath, options = {}) {
@@ -91,8 +92,9 @@ async function orchestrateTranscription(audioPath, options = {}) {
     language = null,
     autoEnhance: autoEnhanceEnabled = true,
     useFallback = true,
-    useGPTCorrection = true,
-    openaiApiKey = null
+    useGPTCorrection = false, // ⚠️ GPT désactivé
+    openaiApiKey = null,
+    fileHash = null
   } = options;
 
   console.log('\n🎬 === ORCHESTRATION INTELLIGENTE DE TRANSCRIPTION ===');
@@ -237,35 +239,10 @@ async function orchestrateTranscription(audioPath, options = {}) {
       usedModel: usedStrategy?.modelSize
     };
 
-    // ÉTAPE 4: Correction GPT si qualité insuffisante
+    // ÉTAPE 4: Correction GPT (DÉSACTIVÉE)
     if (useGPTCorrection && transcriptionQualityReport && !transcriptionQualityReport.isAcceptable) {
-      console.log('\n📍 ÉTAPE 4: Correction GPT nécessaire');
-      
-      if (!openaiApiKey) {
-        console.log('   ⚠️  Clé API OpenAI non fournie, correction GPT ignorée');
-        result.warnings.push('Correction GPT non disponible (clé API manquante)');
-      } else {
-        try {
-          console.log('   🧠 Envoi à GPT-4o-mini pour correction...');
-          
-          // Préparer les segments pour GPT
-          const segments = transcription.segments.map(s => ({
-            start: s.start,
-            end: s.end,
-            text: s.text
-          }));
-
-          const gptResult = await formatWithGPT(segments, openaiApiKey);
-          result.gptCorrection = gptResult;
-          
-          console.log(`   ✅ Correction GPT appliquée`);
-          console.log(`   📝 Résumé: ${gptResult.summary}`);
-          result.warnings.push('Transcription corrigée par GPT-4o-mini');
-        } catch (gptError) {
-          console.error(`   ⚠️  Échec correction GPT: ${gptError.message}`);
-          result.warnings.push(`Correction GPT échouée: ${gptError.message}`);
-        }
-      }
+      console.log('\n📍 ÉTAPE 4: Correction GPT désactivée (fonctionnalité supprimée)');
+      result.warnings.push('Correction GPT non disponible (fonctionnalité supprimée)');
     } else if (transcriptionQualityReport?.isAcceptable) {
       console.log('\n📍 ÉTAPE 4: Qualité acceptable, correction GPT non nécessaire');
     } else {

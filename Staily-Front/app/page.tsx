@@ -14,6 +14,8 @@ export default function Home() {
   const [uploadedFile, setUploadedFile] = useState<any>(null);
   const [transcription, setTranscription] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('auto');
+  const [selectedModel, setSelectedModel] = useState<string>('large-v3');
 
   // Restaurer l'état depuis sessionStorage au chargement
   useEffect(() => {
@@ -109,8 +111,8 @@ export default function Home() {
         },
         body: JSON.stringify({
           filePath: pathToTranscribe,
-          modelSize: 'large-v3',
-          language: 'fr',
+          modelSize: selectedModel,
+          language: selectedLanguage === 'auto' ? null : selectedLanguage,
           useCache: true,
           autoEnhance: true,
           useFallback: false,
@@ -202,6 +204,57 @@ export default function Home() {
                   </p>
                 </div>
               )}
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    🌍 Langue
+                  </label>
+                  <select
+                    value={selectedLanguage}
+                    onChange={(e) => setSelectedLanguage(e.target.value)}
+                    disabled={uploading || transcribing}
+                    className="block w-full text-sm text-gray-900 dark:text-gray-100 
+                             border border-gray-300 dark:border-gray-600 rounded-lg 
+                             bg-gray-50 dark:bg-gray-700 focus:outline-none 
+                             focus:ring-2 focus:ring-blue-500 p-2.5"
+                  >
+                    <option value="auto">Auto-détection</option>
+                    <option value="fr">Français</option>
+                    <option value="en">Anglais</option>
+                    <option value="es">Espagnol</option>
+                    <option value="de">Allemand</option>
+                    <option value="it">Italien</option>
+                    <option value="pt">Portugais</option>
+                    <option value="nl">Néerlandais</option>
+                    <option value="ru">Russe</option>
+                    <option value="zh">Chinois</option>
+                    <option value="ja">Japonais</option>
+                    <option value="ar">Arabe</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    🤖 Modèle Whisper
+                  </label>
+                  <select
+                    value={selectedModel}
+                    onChange={(e) => setSelectedModel(e.target.value)}
+                    disabled={uploading || transcribing}
+                    className="block w-full text-sm text-gray-900 dark:text-gray-100 
+                             border border-gray-300 dark:border-gray-600 rounded-lg 
+                             bg-gray-50 dark:bg-gray-700 focus:outline-none 
+                             focus:ring-2 focus:ring-blue-500 p-2.5"
+                  >
+                    <option value="tiny">Tiny (rapide)</option>
+                    <option value="base">Base</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large-v3">Large-v3 (précis)</option>
+                  </select>
+                </div>
+              </div>
 
               <button
                 onClick={handleUpload}

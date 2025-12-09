@@ -22,6 +22,7 @@ cleanup() {
   echo "🛑 Arrêt des serveurs..."
   kill $BACKEND_PID 2>/dev/null
   kill $FRONTEND_PID 2>/dev/null
+  kill $TAIL_PID 2>/dev/null
   exit 0
 }
 
@@ -34,7 +35,6 @@ cd backend
 npm start > ../backend.log 2>&1 &
 BACKEND_PID=$!
 cd ..
-
 echo "   ✅ Backend démarré (PID: $BACKEND_PID)"
 echo "   📝 Logs: backend.log"
 echo ""
@@ -49,7 +49,6 @@ if curl -s http://localhost:3002/ > /dev/null 2>&1; then
 else
   echo "   ⚠️  Backend ne répond pas encore, mais on continue..."
 fi
-
 echo ""
 
 # Démarrer le frontend
@@ -76,7 +75,6 @@ cd Staily-Front
 npm run dev > ../frontend.log 2>&1 &
 FRONTEND_PID=$!
 cd ..
-
 echo "   ✅ Frontend démarré (PID: $FRONTEND_PID)"
 echo "   📝 Logs: frontend.log"
 echo ""
@@ -84,8 +82,8 @@ echo ""
 # Attendre que le frontend soit prêt
 echo "⏳ Attente du frontend (10 secondes)..."
 sleep 10
-
 echo ""
+
 echo "════════════════════════════════════════════════════════════════"
 echo "✅ Application démarrée avec succès !"
 echo "════════════════════════════════════════════════════════════════"

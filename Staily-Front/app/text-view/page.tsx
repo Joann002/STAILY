@@ -6,6 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 // Configuration de l'API backend
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
 
+
 interface Segment {
   id: number;
   start: number;
@@ -17,9 +18,7 @@ interface CorrectedSegment {
   id: number;
   start: number;
   end: number;
-  originalText: string;
-  correctedText: string;
-  changes: string[];
+  text: string;
 }
 
 export default function TextView() {
@@ -33,6 +32,7 @@ export default function TextView() {
   const [correctionSummary, setCorrectionSummary] = useState<string>('');
   const [correctionStats, setCorrectionStats] = useState<any>(null);
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [isApplyingRules, setIsApplyingRules] = useState(false);
 
   useEffect(() => {
     // Récupérer les données depuis sessionStorage
@@ -75,78 +75,82 @@ export default function TextView() {
   };
 
   const handleApplyRules = async () => {
-    setIsProcessing(true);
-    
+    setIsApplyingRules(true);
+    setNotification({
+      message: '🤖 Application des règles de verbatim corrigé en cours...',
+      type: 'success'
+    });
+
     try {
-      const response = await fetch(`${API_BASE_URL}/apply-rules`, {
+      // Appeler la route backend dédiée
+      const response = await fetch(`${API_BASE_URL}/apply-verbatim`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          segments: segments,
-          language: metadata?.language || 'fr',
-          context: '',
-          saveSRT: true
+          segments: segments
         }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Erreur: ${response.statusText}`);
+      const data = await response.json();
+      console.log('📥 Réponse API:', data);
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Erreur lors de la correction');
       }
 
-      const data = await response.json();
-      console.log('Règles appliquées:', data);
-      
-      setCorrectedSegments(data.corrected.segments);
-      setCorrectionSummary(data.summary);
-      setCorrectionStats(data.statistics);
-      setShowCorrected(true);
-      
-      // Sauvegarder dans sessionStorage pour réutilisation
-      sessionStorage.setItem('correctedTranscription', JSON.stringify({
-        segments: data.corrected.segments,
-        summary: data.summary,
-        statistics: data.statistics,
-        timestamp: Date.now()
-      }));
-      
-      // Afficher notification de succès
+      if (data.corrected && data.corrected.segments) {
+        setCorrectedSegments(data.corrected.segments);
+        setShowCorrected(true);
+        setCorrectionSummary(`${data.statistics.segmentsModified} segments corrigés sur ${data.statistics.totalSegments}`);
+        setCorrectionStats(data.statistics);
+        
+        // Sauvegarder dans sessionStorage
+        sessionStorage.setItem('correctedTranscription', JSON.stringify({
+          segments: data.corrected.segments,
+          summary: `${data.statistics.segmentsModified} segments corrigés sur ${data.statistics.totalSegments}`,
+          statistics: data.statistics,
+        }));
+
+        setNotification({
+          message: '✅ Règles de verbatim corrigé appliquées avec succès !',
+          type: 'success'
+        });
+      } else {
+        console.error('Structure de réponse inattendue:', data);
+        throw new Error('Structure de réponse invalide');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'application des règles:', error);
       setNotification({
-        message: 'Règles de verbatim corrigé appliquées avec succès !',
-        type: 'success'
-      });
-      
-    } catch (error: any) {
-      console.error('Erreur application règles:', error);
-      setNotification({
-        message: `❌ Erreur: ${error.message}`,
+        message: `❌ Erreur: ${error instanceof Error ? error.message : 'Erreur inconnue'}`,
         type: 'error'
       });
     } finally {
-      setIsProcessing(false);
+      setIsApplyingRules(false);
     }
   };
 
   const handleCopyText = () => {
-    const textToUse = showCorrected && correctedSegments 
-      ? correctedSegments.map(seg => seg.correctedText).join('\n')
+    const textToUse = correctedSegments 
+      ? correctedSegments.map(seg => seg.text).join('\n')
       : segments.map(seg => seg.text).join('\n');
     
     navigator.clipboard.writeText(textToUse);
-    alert('✅ Texte copié dans le presse-papier !');
+    setNotification({ message: '✅ Texte copié dans le presse-papier !', type: 'success' });
   };
 
   const handleDownloadText = () => {
-    const textToUse = showCorrected && correctedSegments 
-      ? correctedSegments.map(seg => seg.correctedText).join('\n')
+    const textToUse = correctedSegments 
+      ? correctedSegments.map(seg => seg.text).join('\n')
       : segments.map(seg => seg.text).join('\n');
     
     const blob = new Blob([textToUse], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `transcription-${showCorrected ? 'corrigee' : 'brute'}-${Date.now()}.txt`;
+    a.download = `transcription-${correctedSegments ? 'corrigee' : 'brute'}-${Date.now()}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -210,7 +214,7 @@ export default function TextView() {
             </button>
 
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {showCorrected ? '✨ Texte corrigé' : '📄 Texte brut'}
+              {correctedSegments ? '📊 Comparaison Brut vs Corrigé' : '📄 Texte brut'}
             </h1>
 
             <div className="flex space-x-2">
@@ -278,10 +282,10 @@ export default function TextView() {
                 </div>
                 <button
                   onClick={handleApplyRules}
-                  disabled={isProcessing}
+                  disabled={isApplyingRules}
                   className="ml-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
                 >
-                  {isProcessing ? (
+                  {isApplyingRules ? (
                     <span className="flex items-center space-x-2">
                       <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -290,102 +294,143 @@ export default function TextView() {
                       <span>Traitement...</span>
                     </span>
                   ) : (
-                    '✨ Appliquer les règles'
+                    '✨ Appliquer les règles CV'
                   )}
                 </button>
               </div>
             </div>
           )}
 
-          {/* Toggle entre brut et corrigé */}
+          {/* Statistiques de correction */}
           {correctedSegments && (
             <div className="bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800 rounded-lg p-4">
-              <div className="flex items-center justify-between">
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-1">
-                    ✅ Règles appliquées avec succès !
-                  </h3>
-                  <p className="text-sm text-green-700 dark:text-green-300">
-                    {correctionSummary}
-                  </p>
-                  {correctionStats && (
-                    <div className="mt-2 flex space-x-4 text-xs text-green-600 dark:text-green-400">
-                      <span>📝 {correctionStats.segmentsModified}/{correctionStats.totalSegments} segments modifiés</span>
-                      <span>🗑️ {correctionStats.hesitationsRemoved} hésitations supprimées</span>
-                      <span>✏️ {correctionStats.grammarFixed} corrections grammaticales</span>
-                    </div>
-                  )}
+              <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-1">
+                ✅ Règles appliquées avec succès !
+              </h3>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-2">
+                {correctionSummary}
+              </p>
+              {correctionStats && (
+                <div className="flex space-x-4 text-xs text-green-600 dark:text-green-400">
+                  <span>📝 {correctionStats.segmentsModified}/{correctionStats.totalSegments} segments modifiés</span>
+                  <span>🎯 {correctionStats.tokensUsed} tokens utilisés</span>
                 </div>
-                <button
-                  onClick={() => setShowCorrected(!showCorrected)}
-                  className="ml-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
-                >
-                  {showCorrected ? '📄 Voir brut' : '✨ Voir corrigé'}
-                </button>
-              </div>
+              )}
             </div>
           )}
         </div>
 
-        {/* Texte complet */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-          <div className="prose dark:prose-invert max-w-none">
-            {!showCorrected ? (
-              // Texte brut
+        {/* Texte complet - Affichage côte à côte si corrigé disponible */}
+        {!correctedSegments ? (
+          // Vue simple : texte brut uniquement
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">
+              📄 Transcription brute
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
               <div className="space-y-4 text-gray-800 dark:text-gray-200 leading-relaxed">
-                {segments.map((segment, index) => (
+                {segments.map((segment) => (
                   <p key={segment.id} className="text-base">
                     {segment.text}
                   </p>
                 ))}
               </div>
-            ) : (
-              // Texte corrigé avec comparaison
-              <div className="space-y-6">
-                {correctedSegments?.map((segment, index) => (
-                  <div key={segment.id} className="border-l-4 border-green-500 pl-4">
-                    <p className="text-base text-gray-800 dark:text-gray-200 leading-relaxed mb-2">
-                      {segment.correctedText}
+            </div>
+
+            {/* Stats */}
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+                <span>
+                  📊 {segments.length} lignes • {segments.map(s => s.text).join(' ').split(' ').length} mots
+                </span>
+                <span>
+                  📝 {segments.map(s => s.text).join('').length} caractères
+                </span>
+              </div>
+            </div>
+          </div>
+        ) : (
+          // Vue côte à côte : brut vs corrigé
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* COLONNE GAUCHE : Texte BRUT */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
+                  📄 Version brute
+                </h2>
+                <button
+                  onClick={() => {
+                    const text = segments.map(seg => seg.text).join('\n');
+                    navigator.clipboard.writeText(text);
+                    setNotification({ message: '✅ Texte brut copié !', type: 'success' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                  title="Copier le texte brut"
+                >
+                  📋 Copier
+                </button>
+              </div>
+              
+              <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2">
+                {segments.map((segment) => (
+                  <div key={segment.id} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3 border-l-4 border-gray-400">
+                    <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                      {segment.text}
                     </p>
-                    {segment.changes && segment.changes.length > 0 && (
-                      <details className="text-xs text-gray-500 dark:text-gray-400">
-                        <summary className="cursor-pointer hover:text-green-600 dark:hover:text-green-400">
-                          🔍 Voir les modifications ({segment.changes.length})
-                        </summary>
-                        <div className="mt-2 space-y-1 pl-4">
-                          <p className="text-gray-400 dark:text-gray-500 italic">Original: {segment.originalText}</p>
-                          {segment.changes.map((change, idx) => (
-                            <p key={idx} className="text-green-600 dark:text-green-400">• {change}</p>
-                          ))}
-                        </div>
-                      </details>
-                    )}
                   </div>
                 ))}
               </div>
-            )}
-          </div>
 
-          {/* Stats en bas */}
-          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-              <span>
-                📊 {showCorrected && correctedSegments ? correctedSegments.length : segments.length} lignes • {
-                  showCorrected && correctedSegments 
-                    ? correctedSegments.map(s => s.correctedText).join(' ').split(' ').length
-                    : segments.map(s => s.text).join(' ').split(' ').length
-                } mots
-              </span>
-              <span>
-                📝 {
-                  showCorrected && correctedSegments 
-                    ? correctedSegments.map(s => s.correctedText).join('').length
-                    : segments.map(s => s.text).join('').length
-                } caractères
-              </span>
+              {/* Stats brut */}
+              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                  <p>📊 {segments.length} segments</p>
+                  <p>📝 {segments.map(s => s.text).join(' ').split(' ').length} mots</p>
+                  <p>🔤 {segments.map(s => s.text).join('').length} caractères</p>
+                </div>
+              </div>
+            </div>
+
+            {/* COLONNE DROITE : Texte CORRIGÉ */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-green-800 dark:text-green-200">
+                  ✨ Version corrigée
+                </h2>
+                <button
+                  onClick={() => {
+                    const text = correctedSegments.map(seg => seg.text).join('\n');
+                    navigator.clipboard.writeText(text);
+                    setNotification({ message: '✅ Texte corrigé copié !', type: 'success' });
+                  }}
+                  className="text-sm text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                  title="Copier le texte corrigé"
+                >
+                  📋 Copier
+                </button>
+              </div>
+              
+              <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2">
+                {correctedSegments.map((segment) => (
+                  <div key={segment.id} className="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border-l-4 border-green-500">
+                    <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                      {segment.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Stats corrigé */}
+              <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-800">
+                <div className="text-xs text-green-600 dark:text-green-400 space-y-1">
+                  <p>📊 {correctedSegments.length} segments</p>
+                  <p>📝 {correctedSegments.map(s => s.text).join(' ').split(' ').length} mots</p>
+                  <p>🔤 {correctedSegments.map(s => s.text).join('').length} caractères</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Bouton retour en bas */}
         <div className="mt-6 text-center">
