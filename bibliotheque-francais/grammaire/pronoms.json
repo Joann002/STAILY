@@ -1,0 +1,137 @@
+{
+  "pronoms": {
+    "definition": "Mots qui remplacent un nom ou un groupe nominal pour éviter les répétitions",
+    "types": {
+      "personnels": {
+        "sujets": {
+          "1ere_personne": ["je", "nous"],
+          "2eme_personne": ["tu", "vous"],
+          "3eme_personne": ["il", "elle", "ils", "elles", "on"]
+        },
+        "complements": {
+          "toniques": {
+            "formes": ["moi", "toi", "lui", "elle", "nous", "vous", "eux", "elles"],
+            "emploi": "Après préposition, pour insister",
+            "exemples": ["avec moi", "pour toi", "moi, je pense"]
+          },
+          "atones": {
+            "cod": ["me", "te", "le", "la", "nous", "vous", "les"],
+            "coi": ["me", "te", "lui", "nous", "vous", "leur"],
+            "exemples": ["Il me voit", "Je lui parle"]
+          }
+        },
+        "reflechis": {
+          "formes": ["me", "te", "se", "nous", "vous", "se"],
+          "usage": "Avec les verbes pronominaux",
+          "exemples": ["Je me lave", "Il se promène"]
+        }
+      },
+      "possessifs": {
+        "formes": {
+          "masculin_singulier": ["le mien", "le tien", "le sien", "le nôtre", "le vôtre", "le leur"],
+          "feminin_singulier": ["la mienne", "la tienne", "la sienne", "la nôtre", "la vôtre", "la leur"],
+          "masculin_pluriel": ["les miens", "les tiens", "les siens", "les nôtres", "les vôtres", "les leurs"],
+          "feminin_pluriel": ["les miennes", "les tiennes", "les siennes", "les nôtres", "les vôtres", "les leurs"]
+        },
+        "usage": "Remplace un nom précédé d'un possessif",
+        "exemples": ["Ton livre et le mien", "Sa voiture et la nôtre"]
+      },
+      "demonstratifs": {
+        "simples": {
+          "masculin": ["celui", "ceux"],
+          "feminin": ["celle", "celles"],
+          "neutre": ["ce", "ceci", "cela", "ça"]
+        },
+        "composes": {
+          "proximite": ["celui-ci", "celle-ci", "ceux-ci", "celles-ci"],
+          "eloignement": ["celui-là", "celle-là", "ceux-là", "celles-là"]
+        },
+        "usage": "Désigne en montrant",
+        "exemples": ["Celui qui travaille", "Ceci m'intéresse", "Prends celle-là"]
+      },
+      "relatifs": {
+        "simples": {
+          "qui": "sujet",
+          "que": "COD",
+          "dont": "complément avec 'de'",
+          "où": "complément de lieu ou de temps"
+        },
+        "composes": {
+          "lequel": "laquelle, lesquels, lesquelles",
+          "duquel": "de laquelle, desquels, desquelles",
+          "auquel": "à laquelle, auxquels, auxquelles"
+        },
+        "usage": "Relie une proposition subordonnée à l'antécédent",
+        "exemples": [
+          "L'homme qui parle",
+          "Le livre que je lis",
+          "L'ami dont je parle",
+          "Le jour où il est venu"
+        ]
+      },
+      "interrogatifs": {
+        "personnes": ["qui", "qui est-ce qui", "qui est-ce que"],
+        "choses": ["que", "qu'est-ce qui", "qu'est-ce que", "quoi"],
+        "choix": ["lequel", "laquelle", "lesquels", "lesquelles"],
+        "exemples": [
+          "Qui vient ?",
+          "Que fais-tu ?",
+          "Lequel préfères-tu ?"
+        ]
+      },
+      "indefinis": {
+        "quantite": {
+          "tout": "tous, toute, toutes",
+          "rien": "invariable",
+          "personne": "invariable",
+          "quelqu'un": "quelqu'une",
+          "chacun": "chacune",
+          "plusieurs": "invariable",
+          "certains": "certaines"
+        },
+        "exemples": [
+          "Tout va bien",
+          "Personne ne vient",
+          "Quelqu'un arrive",
+          "Chacun fait ce qu'il veut"
+        ]
+      }
+    },
+    "place_pronoms": {
+      "ordre_complements": {
+        "regle": "me/te/se/nous/vous + le/la/les + lui/leur + y + en",
+        "exemples": [
+          "Je le lui donne",
+          "Il nous en parle",
+          "Elle s'y rend"
+        ]
+      },
+      "imperatif": {
+        "affirmatif": "Après le verbe avec trait d'union",
+        "negatif": "Avant le verbe",
+        "exemples": [
+          "Donne-le-moi !",
+          "Ne me le donne pas !"
+        ]
+      }
+    },
+    "accord": {
+      "avec_etre": "Le participe passé s'accorde avec le sujet",
+      "avec_avoir": "Le participe passé s'accorde avec le COD placé avant",
+      "exemples": [
+        "Elle est venue",
+        "Les fleurs qu'il a cueillies"
+      ]
+    },
+    "y_en": {
+      "y": {
+        "remplace": "Complément de lieu ou complément avec 'à'",
+        "exemples": ["J'y vais (à Paris)", "J'y pense (à cela)"]
+      },
+      "en": {
+        "remplace": "Complément avec 'de' ou partitif",
+        "exemples": ["J'en viens (de Paris)", "J'en mange (du pain)"]
+      }
+    }
+  }
+}

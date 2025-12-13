@@ -1,0 +1,154 @@
+{
+  "accord_nombres": {
+    "adjectifs_numeraux_cardinaux": {
+      "regle_generale": "Invariables",
+      "exemples": [
+        "quatre livres",
+        "vingt euros",
+        "cent pages",
+        "mille habitants"
+      ],
+      "exceptions": {
+        "un": {
+          "regle": "S'accorde en genre",
+          "exemples": [
+            "un livre → une page",
+            "vingt et un hommes → vingt et une femmes"
+          ]
+        },
+        "vingt": {
+          "regle": "Prend un 's' quand il est multiplié et en fin de nombre",
+          "exemples": [
+            "quatre-vingts (4 × 20)",
+            "quatre-vingt-un (pas en fin)",
+            "quatre-vingt-dix (pas en fin)"
+          ]
+        },
+        "cent": {
+          "regle": "Prend un 's' quand il est multiplié et en fin de nombre",
+          "exemples": [
+            "trois cents (3 × 100)",
+            "trois cent un (pas en fin)",
+            "trois cent vingt (pas en fin)"
+          ]
+        },
+        "mille": {
+          "regle": "Toujours invariable",
+          "exemples": ["deux mille", "dix mille"],
+          "note": "Millier, million, milliard s'accordent (ce sont des noms)"
+        }
+      }
+    },
+    "adjectifs_numeraux_ordinaux": {
+      "regle": "S'accordent en genre et en nombre",
+      "exemples": [
+        "le premier jour → la première fois",
+        "les premiers hommes → les premières femmes",
+        "le second étage → la seconde fois"
+      ],
+      "formation": [
+        "premier/première (1er/1ère)",
+        "deuxième ou second/seconde (2e)",
+        "troisième (3e)",
+        "quatrième (4e)..."
+      ]
+    },
+    "fractions": {
+      "numerateur": "Adjectif numéral cardinal (invariable sauf 'un')",
+      "denominateur": "Nom (s'accorde)",
+      "exemples": [
+        "un tiers → deux tiers",
+        "un quart → trois quarts",
+        "une moitié → des moitiés"
+      ],
+      "cas_particuliers": {
+        "demi": {
+          "avant_nom": "Invariable avec trait d'union : une demi-heure",
+          "apres_nom": "Accord en genre : une heure et demie"
+        }
+      }
+    },
+    "multiplicatifs": {
+      "definition": "Indiquent le nombre de fois",
+      "formation": "simple, double, triple, quadruple...",
+      "accord": "S'accordent comme des adjectifs",
+      "exemples": [
+        "une dose simple → des doses simples",
+        "un effet double → des effets doubles"
+      ]
+    },
+    "collectifs": {
+      "definition": "Noms qui désignent un ensemble",
+      "exemples": [
+        "une dizaine",
+        "une vingtaine",
+        "une centaine",
+        "un millier"
+      ],
+      "accord": "S'accordent comme des noms",
+      "usage": "une dizaine de livres, des centaines de personnes"
+    },
+    "expressions_numeriques": {
+      "dates": {
+        "annees": "Invariables : les années mille neuf cent",
+        "jours": "Variables : le premier mai, le deux mai"
+      },
+      "heures": {
+        "regle": "Invariables",
+        "exemples": ["deux heures", "midi", "minuit"]
+      },
+      "ages": {
+        "regle": "Variables selon le contexte",
+        "exemples": [
+          "Il a vingt ans",
+          "Une femme de quarante ans",
+          "Les moins de dix-huit ans"
+        ]
+      }
+    },
+    "ecriture_nombres": {
+      "en_lettres": {
+        "regle_trait_union": "Trait d'union entre les éléments < 100",
+        "reforme_1990": "Trait d'union partout",
+        "exemples": [
+          "dix-sept",
+          "vingt-et-un",
+          "quatre-vingt-dix-neuf",
+          "deux-cent-trente-quatre (réforme 1990)"
+        ]
+      },
+      "en_chiffres": {
+        "usage": "Selon le contexte et le style",
+        "regles_typographiques": [
+          "En lettres : nombres < 10 ou 20 selon les conventions",
+          "En chiffres : nombres précis, statistiques, âges"
+        ]
+      }
+    },
+    "cas_particuliers": {
+      "zero": {
+        "nature": "Nom masculin",
+        "accord": "zéro → des zéros",
+        "usage": "zéro faute, zéro degré"
+      },
+      "million_milliard": {
+        "nature": "Noms masculins",
+        "accord": "un million → des millions",
+        "usage": "deux millions d'habitants"
+      },
+      "pourcentages": {
+        "accord_verbe": "Avec le complément généralement",
+        "exemples": [
+          "20% des élèves ont réussi",
+          "50% de la population vote"
+        ]
+      }
+    },
+    "erreurs_frequentes": {
+      "quatre_vingts": "quatre-vingts (avec s) mais quatre-vingt-un (sans s)",
+      "trois_cents": "trois cents (avec s) mais trois cent un (sans s)",
+      "milles": "mille (toujours sans s) sauf dans 'des milles marins'",
+      "dates": "mil neuf cent (et non mille) dans les dates"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "homophones": {
+    "definition": "Mots qui se prononcent de la même façon mais s'écrivent différemment",
+    "categories": {
+      "a_à": {
+        "a": {
+          "nature": "verbe avoir, 3e personne du singulier",
+          "test": "peut être remplacé par 'avait'",
+          "exemples": ["Il a faim", "Elle a réussi"]
+        },
+        "à": {
+          "nature": "préposition",
+          "test": "ne peut pas être remplacé par 'avait'",
+          "exemples": ["Il va à Paris", "À bientôt"]
+        }
+      },
+      "et_est": {
+        "et": {
+          "nature": "conjonction de coordination",
+          "test": "peut être remplacé par 'et puis'",
+          "exemples": ["Pierre et Paul", "Il mange et boit"]
+        },
+        "est": {
+          "nature": "verbe être, 3e personne du singulier",
+          "test": "peut être remplacé par 'était'",
+          "exemples": ["Il est grand", "C'est beau"]
+        }
+      },
+      "son_sont": {
+        "son": {
+          "nature": "déterminant possessif",
+          "test": "peut être remplacé par 'mon' ou 'ton'",
+          "exemples": ["son livre", "son ami"]
+        },
+        "sont": {
+          "nature": "verbe être, 3e personne du pluriel",
+          "test": "peut être remplacé par 'étaient'",
+          "exemples": ["Ils sont partis", "Elles sont belles"]
+        }
+      },
+      "on_ont": {
+        "on": {
+          "nature": "pronom personnel indéfini",
+          "test": "peut être remplacé par 'il' ou 'nous'",
+          "exemples": ["On mange", "On y va"]
+        },
+        "ont": {
+          "nature": "verbe avoir, 3e personne du pluriel",
+          "test": "peut être remplacé par 'avaient'",
+          "exemples": ["Ils ont faim", "Elles ont réussi"]
+        }
+      },
+      "ou_où": {
+        "ou": {
+          "nature": "conjonction de coordination",
+          "test": "peut être remplacé par 'ou bien'",
+          "exemples": ["Pierre ou Paul", "Thé ou café"]
+        },
+        "où": {
+          "nature": "pronom relatif ou adverbe interrogatif",
+          "test": "indique le lieu ou le temps",
+          "exemples": ["Où vas-tu ?", "La maison où j'habite"]
+        }
+      },
+      "ce_se": {
+        "ce": {
+          "nature": "déterminant ou pronom démonstratif",
+          "test": "peut être remplacé par 'cela'",
+          "exemples": ["ce livre", "c'est beau"]
+        },
+        "se": {
+          "nature": "pronom personnel réfléchi",
+          "test": "accompagne un verbe pronominal",
+          "exemples": ["Il se lave", "Elle se promène"]
+        }
+      },
+      "ces_ses": {
+        "ces": {
+          "nature": "déterminant démonstratif pluriel",
+          "test": "peut être remplacé par 'ces... là'",
+          "exemples": ["ces livres", "ces enfants"]
+        },
+        "ses": {
+          "nature": "déterminant possessif pluriel",
+          "test": "peut être remplacé par 'mes' ou 'tes'",
+          "exemples": ["ses livres", "ses amis"]
+        }
+      }
+    }
+  }
+}

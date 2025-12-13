@@ -1,0 +1,43 @@
+{
+  "apostrophes": {
+    "definition": "L'apostrophe marque l'élision d'une voyelle finale devant une voyelle ou un h muet",
+    "regles_generales": [
+      "Élision obligatoire pour : le, la, de, ne, se, me, te, ce, que, si",
+      "Pas d'élision devant h aspiré : le héros, la honte",
+      "Pas d'élision devant oui, onze, un : le oui, le onze, le un"
+    ],
+    "mots_avec_elision": {
+      "articles": {
+        "le": ["l'arbre", "l'homme", "l'école"],
+        "la": ["l'amie", "l'histoire", "l'eau"]
+      },
+      "prepositions": {
+        "de": ["d'abord", "d'ailleurs", "d'accord"],
+        "jusque": ["jusqu'à", "jusqu'ici", "jusqu'alors"]
+      },
+      "pronoms": {
+        "me": ["m'appelle", "m'écoute"],
+        "te": ["t'aime", "t'écoute"],
+        "se": ["s'appelle", "s'écoute"],
+        "ce": ["c'est", "c'était"]
+      },
+      "conjonctions": {
+        "que": ["qu'il", "qu'elle", "qu'on"],
+        "si": ["s'il", "s'ils"]
+      },
+      "negation": {
+        "ne": ["n'est", "n'était", "n'a"]
+      }
+    },
+    "h_muet_aspiré": {
+      "h_muet": ["l'homme", "l'heure", "l'histoire", "l'hôtel", "l'habit"],
+      "h_aspiré": ["le héros", "la honte", "le haricot", "la hache", "le hibou"]
+    },
+    "cas_particuliers": [
+      "quelqu'un, quelqu'une",
+      "aujourd'hui",
+      "presqu'île",
+      "grand-mère (pas d'apostrophe)"
+    ]
+  }
+}

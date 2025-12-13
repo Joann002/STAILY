@@ -1,0 +1,145 @@
+{
+  "ordre_des_mots": {
+    "definition": "Organisation des éléments dans la phrase française",
+    "ordre_canonique": {
+      "structure_base": "Sujet + Verbe + Complément(s)",
+      "exemple": "Pierre mange une pomme",
+      "elements": [
+        "Sujet (qui fait l'action)",
+        "Verbe (action ou état)", 
+        "Compléments (précisions)"
+      ]
+    },
+    "place_sujet": {
+      "position_normale": "Avant le verbe",
+      "exemples": ["Pierre chante", "Les enfants jouent"],
+      "inversion": {
+        "interrogation": {
+          "exemples": ["Vient-il ?", "Où vas-tu ?", "Que fait Pierre ?"],
+          "avec_pronom": "Reprise par un pronom si le sujet est un nom"
+        },
+        "incise": {
+          "exemples": ["C'est vrai, dit-il", "Je pense, répondit-elle"],
+          "position": "Après les paroles rapportées"
+        },
+        "mise_en_relief": {
+          "exemples": ["Arrive Pierre", "Viennent ensuite les invités"],
+          "effet": "Effet stylistique, littéraire"
+        },
+        "apres_adverbe": {
+          "exemples": ["Peut-être viendra-t-il", "Ainsi parla le roi"],
+          "adverbes": ["peut-être", "ainsi", "aussi", "à peine"]
+        }
+      }
+    },
+    "place_complements": {
+      "cod": {
+        "position_normale": "Après le verbe",
+        "exemples": ["Il lit un livre", "Elle mange une pomme"],
+        "antéposition": {
+          "pronom": "Je le vois",
+          "interrogation": "Que veux-tu ?",
+          "exclamation": "Quelle belle journée nous avons !",
+          "relative": "Le livre que je lis"
+        }
+      },
+      "coi": {
+        "position_normale": "Après le COD s'il y en a un",
+        "exemples": ["Il donne un livre à Pierre", "Elle parle de ses vacances"],
+        "avec_pronom": "Il lui donne un livre"
+      },
+      "circonstanciels": {
+        "mobilite": "Peuvent se placer en début, milieu ou fin de phrase",
+        "exemples": [
+          "Hier, il a plu",
+          "Il a plu hier",
+          "Il a, hier, beaucoup plu"
+        ],
+        "effets": {
+          "debut": "Mise en relief, cadrage temporel",
+          "fin": "Information nouvelle",
+          "milieu": "Incise, précision"
+        }
+      }
+    },
+    "place_adjectifs": {
+      "epithete": {
+        "apres_nom": "Position normale pour la plupart",
+        "exemples": ["une voiture rouge", "un homme intelligent"],
+        "avant_nom": {
+          "adjectifs_courts": ["beau", "bon", "grand", "gros", "petit", "vieux", "nouveau", "jeune"],
+          "exemples": ["une belle maison", "un bon repas", "une grande voiture"],
+          "changement_sens": {
+            "ancien": "un ancien ami (ex-ami) / un ami ancien (âgé)",
+            "grand": "un grand homme (célèbre) / un homme grand (taille)",
+            "pauvre": "un pauvre homme (à plaindre) / un homme pauvre (sans argent)"
+          }
+        }
+      },
+      "attribut": {
+        "position": "Après le verbe d'état",
+        "exemples": ["Il est intelligent", "Elle semble fatiguée"]
+      }
+    },
+    "place_adverbes": {
+      "avec_verbe_simple": {
+        "apres_verbe": "Il mange lentement",
+        "avant_verbe": "Il mange souvent (fréquence)"
+      },
+      "avec_temps_composes": {
+        "entre_auxiliaire_participe": "Il a souvent mangé",
+        "apres_participe": "Il a mangé lentement"
+      },
+      "adverbes_courts": {
+        "position": "Entre auxiliaire et participe",
+        "exemples": ["bien", "mal", "déjà", "encore", "toujours", "souvent"],
+        "phrase": "Il a bien travaillé"
+      },
+      "adverbes_longs": {
+        "position": "Après le participe",
+        "exemples": ["rapidement", "intelligemment", "courageusement"],
+        "phrase": "Il a travaillé courageusement"
+      }
+    },
+    "place_pronoms": {
+      "ordre_complements": {
+        "sequence": "me/te/se/nous/vous + le/la/les + lui/leur + y + en",
+        "exemples": [
+          "Je le lui donne",
+          "Il nous en parle", 
+          "Elle s'y rend",
+          "Je le leur ai dit"
+        ]
+      },
+      "imperatif_affirmatif": {
+        "apres_verbe": "Donne-le-moi !",
+        "ordre": "verbe + le/la/les + moi/toi/lui/nous/vous/leur + y + en"
+      },
+      "imperatif_negatif": {
+        "avant_verbe": "Ne me le donne pas !",
+        "ordre_normal": "Même ordre qu'à l'indicatif"
+      }
+    },
+    "inversions_stylistiques": {
+      "mise_en_relief": {
+        "complement_tete": "Dans ce jardin, poussent de belles fleurs",
+        "effet": "Mise en valeur du complément"
+      },
+      "effet_litteraire": {
+        "exemples": ["Vint alors le moment tant attendu", "S'élève dans le ciel un chant mélodieux"],
+        "registre": "Style soutenu, poétique"
+      }
+    },
+    "contraintes": {
+      "pronoms_clitiques": "Ne peuvent pas être séparés du verbe",
+      "negation": "Encadre le verbe : ne ... pas",
+      "interrogation": "Impose souvent l'inversion",
+      "relatives": "Le pronom relatif en tête de proposition"
+    },
+    "variations_registre": {
+      "oral_familier": "Plus de liberté dans l'ordre",
+      "ecrit_soutenu": "Respect strict des règles",
+      "poesie": "Inversions fréquentes pour la métrique"
+    }
+  }
+}

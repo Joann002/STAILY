@@ -1,0 +1,138 @@
+{
+  "synonymes": {
+    "definition": "Mots de sens identique ou très proche pouvant se substituer dans un contexte donné",
+    "types": {
+      "synonymes_parfaits": {
+        "definition": "Sens rigoureusement identique (rares)",
+        "exemples": [
+          "commencer / débuter",
+          "car / parce que",
+          "mais / cependant"
+        ]
+      },
+      "synonymes_partiels": {
+        "definition": "Sens proche mais nuances différentes",
+        "exemples": [
+          "maison / demeure / habitation",
+          "regarder / observer / contempler",
+          "grand / immense / gigantesque"
+        ]
+      }
+    },
+    "nuances_semantiques": {
+      "intensite": {
+        "faible_fort": [
+          "content → satisfait → ravi → enchanté",
+          "froid → frais → glacial → polaire",
+          "petit → minuscule → microscopique"
+        ]
+      },
+      "registre_langue": {
+        "familier_soutenu": [
+          "bagnole → voiture → automobile → véhicule",
+          "bouquin → livre → ouvrage",
+          "flic → policier → agent → représentant de l'ordre"
+        ]
+      },
+      "connotation": {
+        "positive_negative": [
+          "mince / maigre / squelettique",
+          "économe / avare / radin",
+          "ferme / dur / inflexible"
+        ]
+      }
+    },
+    "domaines_lexicaux": {
+      "emotions": {
+        "joie": ["bonheur", "allégresse", "euphorie", "béatitude", "félicité"],
+        "tristesse": ["chagrin", "mélancolie", "affliction", "désolation"],
+        "colere": ["irritation", "fureur", "rage", "courroux", "ire"],
+        "peur": ["crainte", "angoisse", "terreur", "effroi", "épouvante"]
+      },
+      "mouvement": {
+        "marcher": ["aller", "se déplacer", "cheminer", "déambuler", "arpenter"],
+        "courir": ["galoper", "sprinter", "filer", "foncer", "se précipiter"],
+        "sauter": ["bondir", "sautiller", "gambader", "tressauter"]
+      },
+      "parole": {
+        "dire": ["affirmer", "déclarer", "prétendre", "soutenir", "proclamer"],
+        "demander": ["questionner", "interroger", "solliciter", "requérir"],
+        "crier": ["hurler", "vociférer", "brailler", "s'égosiller"]
+      },
+      "qualites": {
+        "intelligent": ["brillant", "perspicace", "sagace", "astucieux", "ingénieux"],
+        "beau": ["joli", "ravissant", "splendide", "magnifique", "superbe"],
+        "bon": ["excellent", "parfait", "remarquable", "exceptionnel"]
+      }
+    },
+    "contextes_emploi": {
+      "technique": {
+        "exemples": ["utiliser / employer / se servir de"],
+        "precision": "Choix selon le domaine spécialisé"
+      },
+      "litteraire": {
+        "exemples": ["mourir / décéder / trépasser / s'éteindre"],
+        "effet": "Recherche stylistique, évitement des répétitions"
+      },
+      "quotidien": {
+        "exemples": ["manger / se nourrir / s'alimenter"],
+        "usage": "Selon le niveau de langue souhaité"
+      }
+    },
+    "relations_paradigmatiques": {
+      "champs_lexicaux": {
+        "definition": "Ensemble de mots se rapportant à un même thème",
+        "exemple_ecole": ["élève", "professeur", "cours", "leçon", "étudier", "apprendre"]
+      },
+      "familles_mots": {
+        "definition": "Mots formés sur le même radical",
+        "exemple_terre": ["terrain", "terrestre", "territoire", "enterrer", "déterrer"]
+      }
+    },
+    "fonctions_synonymie": {
+      "eviter_repetitions": {
+        "exemple": "Il lit un livre. Cet ouvrage l'intéresse beaucoup.",
+        "effet": "Fluidité du discours"
+      },
+      "precision_expression": {
+        "exemple": "Il marche → Il déambule (manière particulière)",
+        "effet": "Nuance de sens"
+      },
+      "adaptation_registre": {
+        "exemple": "Il est fâché → Il est courroucé (soutenu)",
+        "effet": "Adéquation au contexte"
+      }
+    },
+    "limites_synonymie": {
+      "contexte_obligatoire": {
+        "exemples": [
+          "fermer une porte / clore un débat (pas l'inverse)",
+          "allumer le feu / enflammer les cœurs"
+        ]
+      },
+      "constructions_differentes": {
+        "exemples": [
+          "habiter Paris / résider à Paris",
+          "se rappeler quelque chose / se souvenir de quelque chose"
+        ]
+      },
+      "collocations": {
+        "exemples": [
+          "prendre une décision (pas saisir une décision)",
+          "poser une question (pas mettre une question)"
+        ]
+      }
+    },
+    "outils_recherche": {
+      "dictionnaires_synonymes": "Ressources spécialisées",
+      "dictionnaires_analogiques": "Regroupement par thèmes",
+      "logiciels": "Correcteurs avec suggestions synonymiques"
+    },
+    "exercices_pratiques": {
+      "substitution": "Remplacer un mot par son synonyme",
+      "gradation": "Classer par intensité croissante",
+      "registre": "Adapter le vocabulaire au contexte",
+      "nuances": "Distinguer les sens proches"
+    }
+  }
+}

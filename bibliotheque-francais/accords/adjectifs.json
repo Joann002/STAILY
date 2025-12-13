@@ -1,0 +1,159 @@
+{
+  "accord_adjectifs": {
+    "regle_generale": {
+      "principe": "L'adjectif s'accorde en genre et en nombre avec le nom qu'il qualifie",
+      "formation": {
+        "feminin": "Ajouter un 'e' au masculin",
+        "pluriel": "Ajouter un 's' au singulier"
+      },
+      "exemples": [
+        "un chat noir → une chatte noire",
+        "des chats noirs → des chattes noires"
+      ]
+    },
+    "formation_feminin": {
+      "regle_generale": "masculin + e",
+      "cas_particuliers": {
+        "deja_e": {
+          "regle": "Pas de changement",
+          "exemples": ["rouge → rouge", "jeune → jeune"]
+        },
+        "er_ere": {
+          "regle": "er → ère",
+          "exemples": ["premier → première", "léger → légère"]
+        },
+        "eux_euse": {
+          "regle": "eux → euse",
+          "exemples": ["heureux → heureuse", "peureux → peureuse"]
+        },
+        "eur_euse": {
+          "regle": "eur → euse (pour les adjectifs dérivés de verbes)",
+          "exemples": ["menteur → menteuse", "trompeur → trompeuse"]
+        },
+        "eur_rice": {
+          "regle": "eur → rice (pour certains adjectifs)",
+          "exemples": ["créateur → créatrice", "destructeur → destructrice"]
+        },
+        "f_ve": {
+          "regle": "f → ve",
+          "exemples": ["neuf → neuve", "vif → vive"]
+        },
+        "x_se": {
+          "regle": "x → se",
+          "exemples": ["jaloux → jalouse", "roux → rousse"]
+        },
+        "doublement_consonne": {
+          "regle": "Doublement de la consonne finale + e",
+          "exemples": ["bon → bonne", "gros → grosse", "bas → basse"]
+        },
+        "et_ette": {
+          "regle": "et → ette (pour certains)",
+          "exemples": ["coquet → coquette", "mais : complet → complète"]
+        }
+      },
+      "irreguliers": {
+        "beau": "belle",
+        "nouveau": "nouvelle",
+        "vieux": "vieille",
+        "fou": "folle",
+        "mou": "molle",
+        "blanc": "blanche",
+        "franc": "franche",
+        "sec": "sèche",
+        "frais": "fraîche",
+        "doux": "douce",
+        "faux": "fausse",
+        "roux": "rousse",
+        "long": "longue",
+        "public": "publique",
+        "grec": "grecque"
+      }
+    },
+    "formation_pluriel": {
+      "regle_generale": "singulier + s",
+      "cas_particuliers": {
+        "s_x_z": {
+          "regle": "Invariables",
+          "exemples": ["gris → gris", "heureux → heureux", "nez → nez"]
+        },
+        "eau_au": {
+          "regle": "eau/au → eaux/aux",
+          "exemples": ["beau → beaux", "nouveau → nouveaux"]
+        },
+        "al_aux": {
+          "regle": "al → aux (généralement)",
+          "exemples": ["national → nationaux", "royal → royaux"],
+          "exceptions": ["banal → banals", "fatal → fatals", "natal → natals"]
+        }
+      }
+    },
+    "accord_particuliers": {
+      "plusieurs_noms": {
+        "regle": "Accord avec l'ensemble (masculin pluriel si genres différents)",
+        "exemples": [
+          "Un homme et une femme intelligents",
+          "Des garçons et des filles contents"
+        ]
+      },
+      "epithete_detachee": {
+        "regle": "Accord avec le nom le plus proche ou avec l'ensemble",
+        "exemples": [
+          "Surpris, Pierre et Marie se regardent",
+          "Pierre et Marie, surpris, se regardent"
+        ]
+      },
+      "attribut": {
+        "regle": "Accord avec le sujet",
+        "exemples": [
+          "Cette femme est intelligente",
+          "Ces hommes sont grands"
+        ]
+      },
+      "demi_nu_mi": {
+        "regle": "Invariables devant le nom, variables après",
+        "exemples": [
+          "une demi-heure / une heure et demie",
+          "nu-pieds / pieds nus",
+          "à mi-chemin / à moitié endormie"
+        ]
+      },
+      "possible_impossible": {
+        "regle": "Invariables après 'le plus', 'le moins', 'le mieux'",
+        "exemples": [
+          "le plus possible",
+          "le moins possible",
+          "mais : des solutions possibles"
+        ]
+      }
+    },
+    "adjectifs_couleur": {
+      "simples": {
+        "regle": "S'accordent normalement",
+        "exemples": ["rouge → rouges", "vert → verts", "noir → noirs"]
+      },
+      "composes": {
+        "regle": "Invariables",
+        "exemples": ["bleu clair", "vert foncé", "rouge vif"]
+      },
+      "derives_noms": {
+        "regle": "Généralement invariables",
+        "exemples": ["orange", "marron", "cerise", "or"],
+        "exceptions": ["rose → roses", "mauve → mauves", "fauve → fauves"]
+      }
+    },
+    "adjectifs_numeraux": {
+      "cardinaux": {
+        "regle": "Généralement invariables",
+        "exemples": ["quatre livres", "vingt euros"],
+        "exceptions": {
+          "un": "s'accorde : une, uns (dans certains cas)",
+          "vingt_cent": "s'accordent s'ils sont multipliés et en fin de nombre"
+        }
+      },
+      "ordinaux": {
+        "regle": "S'accordent normalement",
+        "exemples": ["les premières fois", "les derniers jours"]
+      }
+    }
+  }
+}

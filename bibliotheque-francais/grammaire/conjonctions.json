@@ -1,0 +1,148 @@
+{
+  "conjonctions": {
+    "definition": "Mots invariables qui relient des mots, des groupes de mots ou des propositions",
+    "types": {
+      "coordination": {
+        "definition": "Relient des éléments de même fonction",
+        "principales": {
+          "et": {
+            "sens": "addition",
+            "exemples": ["Pierre et Paul", "Il mange et boit"]
+          },
+          "ou": {
+            "sens": "alternative, choix",
+            "exemples": ["thé ou café", "partir ou rester"]
+          },
+          "ni": {
+            "sens": "négation double",
+            "exemples": ["ni Pierre ni Paul", "Il ne mange ni ne boit"]
+          },
+          "mais": {
+            "sens": "opposition",
+            "exemples": ["petit mais fort", "Il veut mais ne peut pas"]
+          },
+          "or": {
+            "sens": "transition dans un raisonnement",
+            "exemples": ["Il pleut, or nous devons sortir"]
+          },
+          "car": {
+            "sens": "cause",
+            "exemples": ["Il reste car il pleut"]
+          },
+          "donc": {
+            "sens": "conséquence",
+            "exemples": ["Il pleut donc je reste"]
+          }
+        },
+        "moyen_mnémotechnique": "Mais où est donc Ornicar ?",
+        "autres": [
+          "cependant", "néanmoins", "toutefois", "pourtant",
+          "ainsi", "alors", "puis", "ensuite"
+        ]
+      },
+      "subordination": {
+        "definition": "Introduisent une proposition subordonnée",
+        "completives": {
+          "que": {
+            "usage": "Introduit une complétive",
+            "exemples": ["Je pense que tu as raison", "Il dit qu'il viendra"]
+          },
+          "si": {
+            "usage": "Interrogation indirecte",
+            "exemples": ["Je me demande s'il viendra"]
+          }
+        },
+        "circonstancielles": {
+          "temps": {
+            "conjonctions": ["quand", "lorsque", "dès que", "aussitôt que", "pendant que", "tandis que", "avant que", "après que", "jusqu'à ce que"],
+            "exemples": [
+              "Quand il arrive, nous partons",
+              "Avant qu'il parte, dis-lui au revoir"
+            ]
+          },
+          "cause": {
+            "conjonctions": ["parce que", "puisque", "comme", "étant donné que", "vu que"],
+            "exemples": [
+              "Il reste parce qu'il pleut",
+              "Puisque tu insistes, j'accepte"
+            ]
+          },
+          "consequence": {
+            "conjonctions": ["si bien que", "de sorte que", "si... que", "tant... que"],
+            "exemples": [
+              "Il pleut si bien que nous restons",
+              "Il est si fatigué qu'il dort"
+            ]
+          },
+          "but": {
+            "conjonctions": ["pour que", "afin que", "de peur que", "de crainte que"],
+            "exemples": [
+              "Je parle fort pour que tu entendes",
+              "Il se cache de peur qu'on le voie"
+            ]
+          },
+          "opposition": {
+            "conjonctions": ["bien que", "quoique", "alors que", "tandis que", "même si"],
+            "exemples": [
+              "Bien qu'il pleuve, nous sortons",
+              "Alors qu'il est riche, il est avare"
+            ]
+          },
+          "condition": {
+            "conjonctions": ["si", "à condition que", "pourvu que", "à moins que"],
+            "exemples": [
+              "Si tu viens, nous partirons",
+              "Pourvu qu'il fasse beau !"
+            ]
+          },
+          "comparaison": {
+            "conjonctions": ["comme", "ainsi que", "de même que", "plus... que", "moins... que"],
+            "exemples": [
+              "Il travaille comme son père",
+              "Il est plus grand que moi"
+            ]
+          }
+        }
+      }
+    },
+    "modes_avec_conjonctions": {
+      "indicatif": [
+        "parce que", "puisque", "quand", "lorsque", "dès que",
+        "après que", "pendant que", "tandis que"
+      ],
+      "subjonctif": [
+        "bien que", "quoique", "pour que", "afin que",
+        "avant que", "jusqu'à ce que", "de peur que"
+      ],
+      "conditionnel": [
+        "au cas où", "dans le cas où"
+      ]
+    },
+    "locutions_conjonctives": {
+      "temps": [
+        "dès que", "aussitôt que", "sitôt que", "chaque fois que",
+        "toutes les fois que", "en même temps que"
+      ],
+      "cause": [
+        "parce que", "étant donné que", "vu que", "attendu que",
+        "sous prétexte que", "d'autant plus que"
+      ],
+      "consequence": [
+        "si bien que", "de sorte que", "de façon que",
+        "de manière que", "au point que"
+      ],
+      "but": [
+        "pour que", "afin que", "dans le but que",
+        "de façon que", "de manière que"
+      ],
+      "opposition": [
+        "bien que", "quoique", "encore que", "malgré que",
+        "alors que", "tandis que"
+      ],
+      "condition": [
+        "à condition que", "pourvu que", "à moins que",
+        "pour peu que", "selon que"
+      ]
+    }
+  }
+}

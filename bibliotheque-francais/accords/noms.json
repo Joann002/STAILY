@@ -1,0 +1,152 @@
+{
+  "accord_noms": {
+    "genre": {
+      "definition": "Propriété grammaticale qui classe les noms en masculin ou féminin",
+      "determination": {
+        "sens": "Souvent lié au sexe pour les êtres animés",
+        "usage": "Déterminé par l'usage pour les objets",
+        "indices": {
+          "terminaisons_masculines": [
+            "-age (le garage, exceptions: la cage, la page, la plage, la rage, l'image)",
+            "-isme (le capitalisme)",
+            "-ment (le moment)",
+            "-eau (le bateau, exception: l'eau)",
+            "-phone (le téléphone)"
+          ],
+          "terminaisons_feminines": [
+            "-tion (la nation)",
+            "-sion (la mission)",
+            "-té (la beauté, exceptions: le côté, l'été, le comité)",
+            "-ée (la journée, exceptions: le musée, le lycée)",
+            "-ure (la voiture)",
+            "-ance (la chance)",
+            "-ence (la science)"
+          ]
+        }
+      },
+      "formation_feminin": {
+        "regle_generale": "masculin + e",
+        "cas_particuliers": {
+          "deja_e": "Pas de changement : un/une élève",
+          "er_ere": "boulanger → boulangère",
+          "eur_euse": "vendeur → vendeuse",
+          "eur_rice": "acteur → actrice",
+          "f_ve": "veuf → veuve",
+          "x_se": "époux → épouse",
+          "doublement": "chat → chatte, chien → chienne",
+          "irreguliers": {
+            "homme": "femme",
+            "père": "mère",
+            "oncle": "tante",
+            "roi": "reine",
+            "coq": "poule",
+            "bélier": "brebis"
+          }
+        }
+      },
+      "noms_epicenes": {
+        "definition": "Même forme pour les deux genres",
+        "exemples": ["élève", "artiste", "journaliste", "enfant", "adulte"]
+      }
+    },
+    "nombre": {
+      "formation_pluriel": {
+        "regle_generale": "singulier + s",
+        "cas_particuliers": {
+          "s_x_z": {
+            "regle": "Invariables",
+            "exemples": ["souris → souris", "prix → prix", "nez → nez"]
+          },
+          "au_eau_eu": {
+            "regle": "Prennent un x",
+            "exemples": ["tuyau → tuyaux", "bateau → bateaux", "jeu → jeux"],
+            "exceptions": ["landau → landaus", "sarrau → sarraus", "bleu → bleus", "pneu → pneus"]
+          },
+          "ou": {
+            "regle": "Généralement + s",
+            "exemples": ["clou → clous", "trou → trous"],
+            "exceptions_x": ["bijou", "caillou", "chou", "genou", "hibou", "joujou", "pou"]
+          },
+          "al": {
+            "regle": "Généralement → aux",
+            "exemples": ["cheval → chevaux", "journal → journaux"],
+            "exceptions_s": ["bal", "carnaval", "festival", "récital", "régal"]
+          },
+          "ail": {
+            "regle": "Généralement + s",
+            "exemples": ["détail → détails", "portail → portails"],
+            "exceptions_aux": ["bail", "corail", "émail", "soupirail", "travail", "vantail", "vitrail"]
+          }
+        }
+      },
+      "pluriels_irreguliers": {
+        "œil": "yeux",
+        "ciel": "cieux (poétique) / ciels (peinture)",
+        "aïeul": "aïeux (ancêtres) / aïeuls (grands-parents)",
+        "monsieur": "messieurs",
+        "madame": "mesdames",
+        "mademoiselle": "mesdemoiselles"
+      }
+    },
+    "noms_composes": {
+      "regles_accord": {
+        "nom_nom": {
+          "regle": "Les deux s'accordent si le sens le permet",
+          "exemples": ["chou-fleur → choux-fleurs", "wagon-lit → wagons-lits"]
+        },
+        "nom_adjectif": {
+          "regle": "Les deux s'accordent",
+          "exemples": ["coffre-fort → coffres-forts", "basse-cour → basses-cours"]
+        },
+        "verbe_nom": {
+          "regle": "Seul le nom peut s'accorder selon le sens",
+          "exemples": ["tire-bouchon → tire-bouchons", "garde-robe → garde-robes"]
+        },
+        "mot_invariable_nom": {
+          "regle": "Seul le nom s'accorde",
+          "exemples": ["avant-garde → avant-gardes", "hors-jeu → hors-jeux"]
+        },
+        "nom_preposition_nom": {
+          "regle": "Seul le premier nom s'accorde généralement",
+          "exemples": ["chef-d'œuvre → chefs-d'œuvre", "arc-en-ciel → arcs-en-ciel"]
+        }
+      },
+      "cas_particuliers": {
+        "sens_singulier": {
+          "description": "Le complément reste au singulier par le sens",
+          "exemples": ["des timbres-poste", "des chefs-d'œuvre"]
+        },
+        "mots_soudes": {
+          "description": "Tendance moderne à souder et accorder normalement",
+          "exemples": ["portefeuille → portefeuilles", "passeport → passeports"]
+        }
+      }
+    },
+    "noms_propres": {
+      "regles": {
+        "personnes": {
+          "regle": "Généralement invariables",
+          "exemples": ["les Dupont", "les Martin"],
+          "exceptions": "Noms de dynasties : les Bourbons, les Capétiens"
+        },
+        "lieux": {
+          "regle": "Invariables",
+          "exemples": ["les deux Amériques", "les Alpes"]
+        },
+        "œuvres": {
+          "regle": "Accord possible selon l'usage",
+          "exemples": ["des Picasso (tableaux)", "des Renault (voitures)"]
+        }
+      }
+    },
+    "noms_collectifs": {
+      "definition": "Noms singuliers désignant un ensemble",
+      "accord_verbe": {
+        "avec_collectif": "La foule se dispersait",
+        "avec_complement": "Une foule de gens se dispersaient",
+        "nuance": "Selon que l'on considère l'ensemble ou les éléments"
+      },
+      "exemples": ["foule", "groupe", "équipe", "troupeau", "multitude", "majorité"]
+    }
+  }
+}

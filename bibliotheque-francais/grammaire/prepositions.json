@@ -1,0 +1,175 @@
+{
+  "prepositions": {
+    "definition": "Mots invariables qui établissent un rapport entre deux éléments de la phrase",
+    "role": "Introduisent un complément et précisent la relation",
+    "principales": {
+      "simples": {
+        "à": {
+          "sens": ["lieu", "temps", "attribution", "manière"],
+          "exemples": [
+            "aller à Paris (lieu)",
+            "à midi (temps)",
+            "donner à Pierre (attribution)",
+            "marcher à pied (manière)"
+          ]
+        },
+        "de": {
+          "sens": ["origine", "possession", "matière", "cause"],
+          "exemples": [
+            "venir de Lyon (origine)",
+            "le livre de Paul (possession)",
+            "une table de bois (matière)",
+            "mourir de froid (cause)"
+          ]
+        },
+        "dans": {
+          "sens": ["lieu", "temps"],
+          "exemples": [
+            "dans la maison (lieu)",
+            "dans une heure (temps)"
+          ]
+        },
+        "sur": {
+          "sens": ["lieu", "sujet"],
+          "exemples": [
+            "sur la table (lieu)",
+            "un livre sur l'histoire (sujet)"
+          ]
+        },
+        "avec": {
+          "sens": ["accompagnement", "moyen"],
+          "exemples": [
+            "partir avec Pierre (accompagnement)",
+            "écrire avec un stylo (moyen)"
+          ]
+        },
+        "pour": {
+          "sens": ["but", "destination", "durée"],
+          "exemples": [
+            "travailler pour réussir (but)",
+            "partir pour Paris (destination)",
+            "pour trois jours (durée)"
+          ]
+        },
+        "par": {
+          "sens": ["moyen", "lieu de passage", "agent"],
+          "exemples": [
+            "envoyer par la poste (moyen)",
+            "passer par Lyon (lieu)",
+            "écrit par l'auteur (agent)"
+          ]
+        },
+        "sans": {
+          "sens": ["privation", "absence"],
+          "exemples": ["sans argent", "sans bruit"]
+        },
+        "sous": {
+          "sens": ["lieu", "dépendance"],
+          "exemples": [
+            "sous la table (lieu)",
+            "sous sa direction (dépendance)"
+          ]
+        },
+        "vers": {
+          "sens": ["direction", "temps approximatif"],
+          "exemples": [
+            "aller vers Paris (direction)",
+            "vers midi (temps)"
+          ]
+        }
+      },
+      "composees": {
+        "à_cause_de": {
+          "sens": "cause",
+          "exemple": "absent à cause de la maladie"
+        },
+        "grâce_à": {
+          "sens": "cause positive",
+          "exemple": "réussir grâce à son travail"
+        },
+        "au_lieu_de": {
+          "sens": "substitution",
+          "exemple": "au lieu de partir"
+        },
+        "à_côté_de": {
+          "sens": "lieu",
+          "exemple": "à côté de la maison"
+        },
+        "en_face_de": {
+          "sens": "lieu",
+          "exemple": "en face de l'école"
+        },
+        "au_dessus_de": {
+          "sens": "lieu",
+          "exemple": "au-dessus de nos têtes"
+        },
+        "au_dessous_de": {
+          "sens": "lieu",
+          "exemple": "au-dessous de zéro"
+        },
+        "à_travers": {
+          "sens": "lieu de passage",
+          "exemple": "à travers la forêt"
+        },
+        "le_long_de": {
+          "sens": "lieu",
+          "exemple": "le long de la rivière"
+        }
+      }
+    },
+    "contractions": {
+      "du": "de + le",
+      "des": "de + les",
+      "au": "à + le",
+      "aux": "à + les"
+    },
+    "emplois_particuliers": {
+      "à_de_lieu": {
+        "à": "direction, destination",
+        "de": "origine, provenance",
+        "exemples": [
+          "aller à Paris / venir de Paris",
+          "monter au grenier / descendre du grenier"
+        ]
+      },
+      "dans_en_sur": {
+        "dans": "intérieur d'un lieu fermé",
+        "en": "moyen de transport, matière",
+        "sur": "surface, contact",
+        "exemples": [
+          "dans la maison / en voiture / sur la table"
+        ]
+      },
+      "par_pour": {
+        "par": "moyen, agent, lieu de passage",
+        "pour": "but, destination, durée",
+        "exemples": [
+          "voyager par le train / voyager pour Paris",
+          "fait par Pierre / fait pour Pierre"
+        ]
+      }
+    },
+    "fonctions": {
+      "complement_nom": "la maison de Pierre",
+      "complement_adjectif": "fier de son fils",
+      "complement_verbe": "parler de politique",
+      "complement_circonstanciel": "partir à midi"
+    },
+    "locutions_prepositives": [
+      "à cause de",
+      "grâce à",
+      "au lieu de",
+      "à côté de",
+      "en face de",
+      "au-dessus de",
+      "au-dessous de",
+      "à travers",
+      "le long de",
+      "au cours de",
+      "au sujet de",
+      "à l'égard de",
+      "en dépit de",
+      "faute de"
+    ]
+  }
+}

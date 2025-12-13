@@ -1,0 +1,84 @@
+{
+  "reforme_1990": {
+    "description": "Rectifications de l'orthographe française proposées en 1990",
+    "statut": "Recommandées mais non obligatoires",
+    "principales_modifications": {
+      "accent_circonflexe": {
+        "regle": "Suppression sur i et u sauf cas d'ambiguïté",
+        "exemples": {
+          "ancienne": ["coût", "goût", "traîner", "connaître"],
+          "nouvelle": ["cout", "gout", "trainer", "connaitre"],
+          "maintenu": ["dû", "mûr", "sûr", "jeûne"]
+        }
+      },
+      "trait_union_nombres": {
+        "regle": "Trait d'union dans tous les nombres composés",
+        "exemples": {
+          "ancienne": ["vingt et un", "cent trois"],
+          "nouvelle": ["vingt-et-un", "cent-trois"]
+        }
+      },
+      "pluriel_mots_composes": {
+        "regle": "Soudure et accord simplifié",
+        "exemples": {
+          "ancienne": ["des porte-monnaie", "des garde-robes"],
+          "nouvelle": ["des portemonnaies", "des garderobes"]
+        }
+      },
+      "mots_empruntes": {
+        "regle": "Francisation de l'orthographe",
+        "exemples": {
+          "ancienne": ["week-end", "hot-dog", "cow-boy"],
+          "nouvelle": ["weekend", "hotdog", "cowboy"]
+        }
+      },
+      "verbes_en_eler_eter": {
+        "regle": "Accent grave au lieu du doublement",
+        "exemples": {
+          "ancienne": ["j'appelle", "je jette"],
+          "nouvelle": ["j'appèle", "je jète"],
+          "exceptions": ["appeler", "jeter", "rappeler", "rejeter"]
+        }
+      },
+      "trema": {
+        "regle": "Déplacement sur la voyelle prononcée",
+        "exemples": {
+          "ancienne": ["aiguë", "ambiguë"],
+          "nouvelle": ["aigüe", "ambigüe"]
+        }
+      },
+      "consonnes_doubles": {
+        "regle": "Simplification de certaines doubles consonnes",
+        "exemples": {
+          "ancienne": ["charriot", "imbécillité"],
+          "nouvelle": ["chariot", "imbécilité"]
+        }
+      },
+      "participe_passe": {
+        "regle": "Invariabilité avec avoir dans certains cas",
+        "exemples": {
+          "ancienne": ["elle s'est laissée faire"],
+          "nouvelle": ["elle s'est laissé faire"]
+        }
+      }
+    },
+    "mots_touches": {
+      "accent_circonflexe": [
+        "cout", "gout", "trainer", "paraitre", "naitre",
+        "bruler", "surir", "murir", "flute", "huitre"
+      ],
+      "soudure": [
+        "portemonnaie", "millepattes", "chauvesouris",
+        "weekend", "hotdog", "cowboy", "baseball"
+      ],
+      "accent_grave": [
+        "cèleri", "crèmerie", "évènement", "règlementaire"
+      ]
+    },
+    "application": {
+      "enseignement": "Les deux orthographes sont acceptées",
+      "examens": "Aucune des deux ne peut être considérée comme fautive",
+      "usage": "Adoption progressive et variable selon les contextes"
+    }
+  }
+}

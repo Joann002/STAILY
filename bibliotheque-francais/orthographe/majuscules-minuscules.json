@@ -1,0 +1,74 @@
+{
+  "majuscules_minuscules": {
+    "majuscules_obligatoires": {
+      "debut_phrase": {
+        "description": "Première lettre de chaque phrase",
+        "exemples": ["Il fait beau.", "Que fais-tu ?", "Attention !"]
+      },
+      "noms_propres": {
+        "personnes": ["Pierre", "Marie", "Dupont"],
+        "lieux": ["Paris", "France", "Europe", "Seine"],
+        "peuples_nationalites": ["Français", "Européen", "Parisien"],
+        "langues": ["le français", "l'anglais", "l'espagnol"],
+        "religions": ["Christianisme", "Islam", "Judaïsme"],
+        "divinites": ["Dieu", "Allah", "Bouddha"]
+      },
+      "titres_œuvres": {
+        "description": "Premier mot des titres d'œuvres",
+        "exemples": ["Les Misérables", "Le Petit Prince", "La Joconde"]
+      },
+      "organismes_institutions": {
+        "exemples": ["l'Assemblée nationale", "l'Université de Paris", "le Ministère de l'Éducation"]
+      },
+      "fetes_evenements": {
+        "exemples": ["Noël", "Pâques", "la Révolution française", "la Première Guerre mondiale"]
+      }
+    },
+    "minuscules_obligatoires": {
+      "jours_mois": {
+        "description": "Jours de la semaine et mois",
+        "exemples": ["lundi", "mardi", "janvier", "février"]
+      },
+      "saisons": {
+        "exemples": ["printemps", "été", "automne", "hiver"]
+      },
+      "langues_adjectifs": {
+        "description": "Langues et adjectifs de nationalité",
+        "exemples": ["parler français", "un livre anglais", "la culture française"]
+      },
+      "points_cardinaux": {
+        "description": "Sauf s'ils désignent une région",
+        "exemples": ["le nord", "vers l'est", "mais : le Nord (région)"]
+      }
+    },
+    "cas_particuliers": {
+      "particule_noblesse": {
+        "description": "Particules de, du, des, d'",
+        "regles": "Minuscule sauf en début de phrase ou après un prénom",
+        "exemples": ["Charles de Gaulle", "De Gaulle était général"]
+      },
+      "titres_civilite": {
+        "description": "Monsieur, Madame, Mademoiselle",
+        "regles": "Majuscule en abrégé, minuscule en entier",
+        "exemples": ["M. Dupont", "monsieur Dupont"]
+      },
+      "saint": {
+        "description": "Saint dans les noms propres",
+        "regles": "Majuscule pour la personne, minuscule pour le lieu",
+        "exemples": ["saint Pierre (personne)", "rue Saint-Pierre (lieu)"]
+      },
+      "etat_gouvernement": {
+        "description": "État, Gouvernement",
+        "regles": "Majuscule quand ils désignent l'institution",
+        "exemples": ["l'État français", "le Gouvernement", "mais : un état de fait"]
+      }
+    },
+    "sigles_acronymes": {
+      "description": "Sigles en majuscules, acronymes selon l'usage",
+      "exemples": {
+        "sigles": ["SNCF", "EDF", "ONU"],
+        "acronymes": ["Unesco", "Unicef", "radar"]
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "temps_verbaux": {
+    "definition": "Indiquent le moment où se déroule l'action par rapport au moment de l'énonciation",
+    "classification": {
+      "simples": "Formés d'un seul mot",
+      "composes": "Formés avec un auxiliaire + participe passé"
+    },
+    "indicatif": {
+      "present": {
+        "valeurs": {
+          "actualite": "Il mange maintenant",
+          "habitude": "Il mange à midi",
+          "verite_generale": "La terre tourne",
+          "futur_proche": "Je pars demain",
+          "passe_recent": "J'arrive de Paris",
+          "narration": "En 1789, la Révolution éclate"
+        },
+        "formation": "radical + terminaisons selon le groupe"
+      },
+      "imparfait": {
+        "valeurs": {
+          "action_passee_non_achevee": "Il mangeait quand je suis arrivé",
+          "habitude_passee": "Quand j'étais petit, je jouais",
+          "description": "Il faisait beau",
+          "politesse": "Je venais vous demander",
+          "hypothese": "Si j'étais riche, je voyagerais"
+        },
+        "formation": "radical de la 1ère pers. pluriel présent + ais, ais, ait, ions, iez, aient"
+      },
+      "passe_simple": {
+        "valeurs": {
+          "action_passee_achevee": "Il mangea rapidement",
+          "succession_actions": "Il entra, salua et s'assit",
+          "narration": "Il était une fois un roi qui vécut longtemps"
+        },
+        "formation": "radical + terminaisons spécifiques selon le groupe",
+        "usage": "Principalement à l'écrit, style soutenu"
+      },
+      "futur_simple": {
+        "valeurs": {
+          "action_future": "Il mangera demain",
+          "ordre_attenué": "Tu feras tes devoirs",
+          "probabilite": "Il sera malade",
+          "verite_generale": "Il y aura toujours des pauvres"
+        },
+        "formation": "infinitif + ai, as, a, ons, ez, ont"
+      },
+      "passe_compose": {
+        "valeurs": {
+          "action_passee_achevee": "Il a mangé",
+          "resultat_present": "Il est parti (il n'est plus là)",
+          "experience": "J'ai déjà vu ce film"
+        },
+        "formation": "auxiliaire être/avoir au présent + participe passé",
+        "usage": "Temps du passé le plus utilisé à l'oral"
+      },
+      "plus_que_parfait": {
+        "valeurs": {
+          "anteriorite_dans_passe": "Il avait mangé quand je suis arrivé",
+          "regret": "Si j'avais su !",
+          "politesse": "J'étais venu vous voir"
+        },
+        "formation": "auxiliaire être/avoir à l'imparfait + participe passé"
+      },
+      "passe_anterieur": {
+        "valeurs": {
+          "anteriorite_immediate": "Dès qu'il eut mangé, il partit"
+        },
+        "formation": "auxiliaire être/avoir au passé simple + participe passé",
+        "usage": "Rare, style très soutenu"
+      },
+      "futur_anterieur": {
+        "valeurs": {
+          "anteriorite_dans_futur": "Quand il aura mangé, il partira",
+          "probabilite_passee": "Il aura oublié",
+          "bilan_futur": "Dans un an, j'aurai terminé"
+        },
+        "formation": "auxiliaire être/avoir au futur + participe passé"
+      }
+    },
+    "subjonctif": {
+      "present": {
+        "valeurs": {
+          "simultaneite_posteriorite": "Je veux qu'il vienne",
+          "doute": "Je doute qu'il soit là",
+          "sentiment": "Je suis content qu'il réussisse"
+        },
+        "formation": "radical de la 3ème pers. pluriel présent indicatif + e, es, e, ions, iez, ent"
+      },
+      "passe": {
+        "valeurs": {
+          "anteriorite": "Je suis content qu'il ait réussi",
+          "action_accomplie": "Bien qu'il soit parti, je l'attends"
+        },
+        "formation": "auxiliaire être/avoir au subjonctif présent + participe passé"
+      },
+      "imparfait": {
+        "valeurs": {
+          "simultaneite_dans_passe": "Je voulais qu'il vînt"
+        },
+        "formation": "radical du passé simple + sse, sses, ^t, ssions, ssiez, ssent",
+        "usage": "Très rare, style très soutenu"
+      },
+      "plus_que_parfait": {
+        "valeurs": {
+          "anteriorite_dans_passe": "Je voulais qu'il fût venu"
+        },
+        "formation": "auxiliaire être/avoir au subjonctif imparfait + participe passé",
+        "usage": "Très rare, style très soutenu"
+      }
+    },
+    "conditionnel": {
+      "present": {
+        "valeurs": {
+          "condition": "Si j'étais riche, je voyagerais",
+          "politesse": "Pourriez-vous m'aider ?",
+          "information_incertaine": "Il serait malade",
+          "conseil": "Tu devrais partir",
+          "regret": "J'aurais aimé venir"
+        },
+        "formation": "infinitif + ais, ais, ait, ions, iez, aient"
+      },
+      "passe": {
+        "valeurs": {
+          "condition_non_realisee": "Si j'avais su, je serais venu",
+          "regret": "J'aurais dû partir",
+          "reproche": "Tu aurais pu m'aider",
+          "information_passee_incertaine": "Il aurait été malade"
+        },
+        "formation": "auxiliaire être/avoir au conditionnel présent + participe passé"
+      }
+    },
+    "imperatif": {
+      "present": {
+        "valeurs": {
+          "ordre": "Mange !",
+          "conseil": "Repose-toi",
+          "priere": "Pardonnez-moi",
+          "souhait": "Soyez heureux !"
+        },
+        "formation": "Formes du présent indicatif sans pronom sujet"
+      },
+      "passe": {
+        "valeurs": {
+          "ordre_avec_limite_temps": "Aie terminé avant midi !"
+        },
+        "formation": "auxiliaire être/avoir à l'impératif présent + participe passé",
+        "usage": "Très rare"
+      }
+    },
+    "concordance_temps": {
+      "simultaneite": {
+        "presente": "Je pense qu'il vient",
+        "passee": "Je pensais qu'il venait",
+        "future": "Je penserai qu'il viendra"
+      },
+      "anteriorite": {
+        "presente": "Je pense qu'il est venu",
+        "passee": "Je pensais qu'il était venu",
+        "future": "Je penserai qu'il sera venu"
+      },
+      "posteriorite": {
+        "presente": "Je pense qu'il viendra",
+        "passee": "Je pensais qu'il viendrait",
+        "future": "Je penserai qu'il viendra"
+      }
+    }
+  }
+}

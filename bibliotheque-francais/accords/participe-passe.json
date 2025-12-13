@@ -1,0 +1,165 @@
+{
+  "accord_participe_passe": {
+    "definition": "Règles d'accord du participe passé selon l'auxiliaire et la construction",
+    "avec_etre": {
+      "regle": "Accord avec le sujet en genre et en nombre",
+      "exemples": [
+        "Elle est venue",
+        "Ils sont partis",
+        "Elles sont arrivées",
+        "Nous sommes restés"
+      ],
+      "verbes_concernes": [
+        "aller", "venir", "arriver", "partir", "entrer", "sortir",
+        "monter", "descendre", "naître", "mourir", "rester", "tomber",
+        "devenir", "revenir", "parvenir", "intervenir"
+      ]
+    },
+    "avec_avoir": {
+      "regle_generale": "Pas d'accord",
+      "exemples": [
+        "J'ai mangé",
+        "Elle a chanté",
+        "Nous avons travaillé"
+      ],
+      "exception_cod_anterieur": {
+        "regle": "Accord si le COD est placé avant le verbe",
+        "identification_cod": "Répondre à 'qui ?' ou 'quoi ?'",
+        "exemples": [
+          "Les fleurs qu'il a cueillies (il a cueilli quoi ? les fleurs)",
+          "Je les ai vues (j'ai vu qui ? les = elles)",
+          "Quelle robe as-tu achetée ? (tu as acheté quoi ? quelle robe)"
+        ],
+        "cas_particuliers": {
+          "pronom_en": {
+            "regle": "Généralement pas d'accord",
+            "exemples": ["Des pommes, j'en ai mangé", "J'en ai vu de belles"],
+            "exception": "Accord possible si 'en' = complément partitif précis"
+          },
+          "le_neutre": {
+            "regle": "Pas d'accord avec 'le' neutre (= cela)",
+            "exemples": [
+              "Elle est plus intelligente que je ne l'avais pensé",
+              "Cette histoire, je l'ai entendu raconter"
+            ]
+          },
+          "combien_que_de": {
+            "regle": "Accord avec le complément sous-entendu",
+            "exemples": [
+              "Combien de fautes as-tu faites ?",
+              "Que de progrès tu as faits !"
+            ]
+          }
+        }
+      }
+    },
+    "verbes_pronominaux": {
+      "essentiellement_pronominaux": {
+        "definition": "Verbes qui n'existent qu'à la forme pronominale",
+        "regle": "Accord avec le sujet",
+        "verbes": [
+          "s'absenter", "s'abstenir", "s'accroupir", "s'acharner",
+          "s'agenouiller", "s'écrouler", "s'évanouir", "s'enfuir",
+          "se repentir", "se souvenir", "se suicider"
+        ],
+        "exemples": [
+          "Elle s'est évanouie",
+          "Ils se sont enfuis",
+          "Elles se sont repenties"
+        ]
+      },
+      "accidentellement_pronominaux": {
+        "definition": "Verbes qui peuvent exister sans pronom",
+        "analyse_fonction": {
+          "pronom_cod": {
+            "regle": "Accord avec le sujet",
+            "test": "Le pronom peut être remplacé par un COD",
+            "exemples": [
+              "Elle s'est lavée (elle a lavé elle-même)",
+              "Ils se sont regardés (ils ont regardé eux-mêmes)"
+            ]
+          },
+          "pronom_coi": {
+            "regle": "Pas d'accord",
+            "test": "Le pronom peut être remplacé par un COI",
+            "exemples": [
+              "Elle s'est lavé les mains (elle a lavé les mains à elle-même)",
+              "Ils se sont parlé (ils ont parlé à eux-mêmes)"
+            ]
+          },
+          "cod_apres_verbe": {
+            "regle": "Pas d'accord si COD après le verbe",
+            "exemples": [
+              "Elle s'est coupé le doigt",
+              "Ils se sont serré la main"
+            ]
+          }
+        }
+      },
+      "sens_passif": {
+        "definition": "Le sujet subit l'action",
+        "regle": "Accord avec le sujet",
+        "exemples": [
+          "Ces maisons se sont bien vendues",
+          "Les portes se sont ouvertes",
+          "Cette règle s'est toujours appliquée"
+        ]
+      },
+      "sens_reciproque": {
+        "definition": "Action mutuelle entre les sujets",
+        "analyse": "Même règle que les accidentellement pronominaux",
+        "exemples": [
+          "Ils se sont battus (ils ont battu l'un l'autre)",
+          "Elles se sont téléphoné (elles ont téléphoné l'une à l'autre)"
+        ]
+      }
+    },
+    "cas_particuliers": {
+      "verbes_impersonnels": {
+        "regle": "Toujours invariable",
+        "exemples": [
+          "Les chaleurs qu'il y a eu",
+          "Les inondations qu'il y a eu"
+        ]
+      },
+      "infinitif_sous_entendu": {
+        "regle": "Pas d'accord si infinitif sous-entendu",
+        "exemples": [
+          "Cette chanson, je l'ai entendu chanter (= entendu [quelqu'un] chanter)",
+          "Ces enfants, je les ai vu jouer"
+        ],
+        "mais": "Je les ai entendus chanter (= eux qui chantaient)"
+      },
+      "participe_suivi_infinitif": {
+        "regle": "Accord si le COD fait l'action de l'infinitif",
+        "exemples": [
+          "Les musiciens que j'ai entendus jouer (eux jouaient)",
+          "La chanson que j'ai entendu jouer (elle ne joue pas)"
+        ]
+      },
+      "coûter_peser_valoir": {
+        "regle": "Pas d'accord si complément circonstanciel",
+        "exemples": [
+          "Les trois kilos qu'il a pesé (CC de mesure)",
+          "Les mille euros que cela a coûté (CC de prix)",
+          "mais : Les paquets qu'il a pesés (COD)"
+        ]
+      }
+    },
+    "methode_identification": {
+      "etapes": [
+        "1. Identifier l'auxiliaire (être/avoir)",
+        "2. Si avoir : chercher le COD",
+        "3. Si COD avant le verbe : accord",
+        "4. Si être : accord avec le sujet",
+        "5. Si pronominal : analyser la fonction du pronom"
+      ],
+      "questions_utiles": [
+        "Qui fait l'action ? (sujet)",
+        "Qui/quoi subit l'action ? (COD)",
+        "À qui/à quoi ? (COI)",
+        "Le pronom peut-il être supprimé ?"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "traits_union": {
+    "definition": "Le trait d'union relie des éléments pour former une unité",
+    "usages": {
+      "mots_composes": {
+        "description": "Relie les éléments d'un mot composé",
+        "exemples": ["arc-en-ciel", "belle-mère", "chef-d'œuvre", "c'est-à-dire", "vis-à-vis"]
+      },
+      "nombres": {
+        "description": "Relie les éléments des nombres composés",
+        "regles": [
+          "De 17 à 99 : dix-sept, vingt-et-un, quatre-vingt-dix",
+          "Réforme 1990 : tous les éléments peuvent être reliés"
+        ],
+        "exemples": ["dix-sept", "vingt-et-un", "quatre-vingt-dix", "cent-vingt-trois"]
+      },
+      "inversion_sujet": {
+        "description": "Relie le verbe au pronom sujet inversé",
+        "exemples": ["Vient-il ?", "Où allez-vous ?", "Que fait-elle ?"]
+      },
+      "imperatif_pronoms": {
+        "description": "Relie l'impératif aux pronoms compléments",
+        "exemples": ["Donne-moi", "Allez-y", "Dis-le-lui", "Prends-en"]
+      },
+      "prefixes": {
+        "description": "Avec certains préfixes",
+        "exemples": {
+          "ex": ["ex-ministre", "ex-mari"],
+          "anti": ["anti-inflammatoire", "anti-âge"],
+          "auto": ["auto-école", "auto-stop"],
+          "co": ["co-auteur", "co-propriétaire"],
+          "non": ["non-fumeur", "non-violence"],
+          "quasi": ["quasi-certitude", "quasi-totalité"],
+          "semi": ["semi-automatique", "semi-liberté"],
+          "sous": ["sous-sol", "sous-marin"]
+        }
+      },
+      "t_euphonique": {
+        "description": "Ajout d'un 't' euphonique entre traits d'union",
+        "regles": "Quand le verbe finit par une voyelle et le pronom commence par une voyelle",
+        "exemples": ["Mange-t-il ?", "Va-t-elle ?", "Aime-t-on ?"]
+      }
+    },
+    "cas_particuliers": {
+      "aujourd_hui": "aujourd'hui (apostrophe, pas trait d'union)",
+      "peut_etre": "peut-être",
+      "c_est_a_dire": "c'est-à-dire",
+      "au_dessus": "au-dessus",
+      "au_dessous": "au-dessous",
+      "par_dessus": "par-dessus",
+      "par_dessous": "par-dessous"
+    },
+    "coupure_mots": {
+      "description": "En fin de ligne pour couper un mot",
+      "regles": [
+        "Entre deux syllabes",
+        "Jamais après une apostrophe",
+        "Jamais avant ou après x ou y entre voyelles",
+        "Jamais isoler une lettre"
+      ]
+    }
+  }
+}

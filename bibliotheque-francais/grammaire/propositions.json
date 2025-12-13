@@ -1,0 +1,189 @@
+{
+  "propositions": {
+    "definition": "Unité syntaxique organisée autour d'un verbe conjugué",
+    "elements_constitutifs": {
+      "verbe_conjugue": "Élément central obligatoire",
+      "sujet": "Généralement présent (sauf impératif)",
+      "complements": "Selon la valence du verbe"
+    },
+    "types_propositions": {
+      "independante": {
+        "definition": "Proposition qui se suffit à elle-même",
+        "caracteristiques": [
+          "Sens complet",
+          "Autonomie syntaxique",
+          "Peut constituer une phrase à elle seule"
+        ],
+        "exemples": [
+          "Il pleut.",
+          "Pierre mange une pomme.",
+          "Que cette journée est belle !"
+        ]
+      },
+      "principale": {
+        "definition": "Proposition dont dépend une ou plusieurs subordonnées",
+        "caracteristiques": [
+          "Contient l'information principale",
+          "Peut exister sans la subordonnée",
+          "Régit le mode de la subordonnée"
+        ],
+        "exemples": [
+          "Je pense [qu'il viendra]",
+          "Il travaille [pour réussir]",
+          "L'homme [qui parle] est mon père"
+        ]
+      },
+      "subordonnee": {
+        "definition": "Proposition qui dépend d'une autre proposition",
+        "caracteristiques": [
+          "Introduite par un mot subordonnant",
+          "Fonction grammaticale dans la phrase",
+          "Mode souvent imposé"
+        ],
+        "types": {
+          "completive": {
+            "definition": "Complète le sens d'un verbe, nom ou adjectif",
+            "introducteurs": ["que", "si", "comme", "pourquoi", "quand"],
+            "fonctions": ["COD", "COI", "sujet", "complément du nom"],
+            "exemples": [
+              "Je sais qu'il viendra (COD)",
+              "Il doute que tu réussisses (COI)",
+              "Qu'il parte me surprend (sujet)"
+            ]
+          },
+          "relative": {
+            "definition": "Complète un nom (antécédent)",
+            "introducteurs": ["qui", "que", "dont", "où", "lequel"],
+            "fonctions": ["épithète", "apposition"],
+            "exemples": [
+              "L'homme qui parle est mon père",
+              "Le livre que je lis est passionnant",
+              "La ville dont je viens est belle"
+            ]
+          },
+          "circonstancielle": {
+            "definition": "Exprime les circonstances de l'action principale",
+            "types": {
+              "temps": {
+                "introducteurs": ["quand", "lorsque", "dès que", "avant que", "après que"],
+                "exemples": ["Quand il pleut, nous restons à la maison"]
+              },
+              "cause": {
+                "introducteurs": ["parce que", "puisque", "comme", "étant donné que"],
+                "exemples": ["Il reste parce qu'il pleut"]
+              },
+              "consequence": {
+                "introducteurs": ["si bien que", "de sorte que", "si... que"],
+                "exemples": ["Il pleut si bien que nous restons"]
+              },
+              "but": {
+                "introducteurs": ["pour que", "afin que", "de peur que"],
+                "exemples": ["Je parle fort pour que tu entendes"]
+              },
+              "opposition": {
+                "introducteurs": ["bien que", "quoique", "alors que", "tandis que"],
+                "exemples": ["Bien qu'il pleuve, nous sortons"]
+              },
+              "condition": {
+                "introducteurs": ["si", "à condition que", "pourvu que", "à moins que"],
+                "exemples": ["Si tu viens, nous partirons"]
+              },
+              "comparaison": {
+                "introducteurs": ["comme", "ainsi que", "plus... que", "moins... que"],
+                "exemples": ["Il travaille comme son père"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "coordination": {
+      "definition": "Liaison de propositions de même niveau syntaxique",
+      "conjonctions": ["et", "ou", "ni", "mais", "or", "car", "donc"],
+      "exemples": [
+        "Il pleut et nous restons à la maison",
+        "Il travaille mais il ne réussit pas",
+        "Il pleut donc nous restons"
+      ],
+      "types": {
+        "copulative": "et, ni (addition)",
+        "disjonctive": "ou (alternative)",
+        "adversative": "mais, or (opposition)",
+        "causale": "car (cause)",
+        "consecutive": "donc (conséquence)"
+      }
+    },
+    "juxtaposition": {
+      "definition": "Propositions reliées par la ponctuation seule",
+      "signes": ["virgule", "point-virgule", "deux-points"],
+      "exemples": [
+        "Il pleut, nous restons à la maison",
+        "Il travaille ; il réussira",
+        "Il pleut : nous restons"
+      ]
+    },
+    "modes_subordonnees": {
+      "indicatif": {
+        "usage": "Fait réel, certain",
+        "contextes": [
+          "Après des verbes d'opinion à la forme affirmative",
+          "Dans les relatives",
+          "Dans certaines circonstancielles (temps, cause)"
+        ]
+      },
+      "subjonctif": {
+        "usage": "Fait envisagé, subjectif",
+        "contextes": [
+          "Après des verbes de sentiment, de volonté, de doute",
+          "Après certaines conjonctions (bien que, pour que, avant que)",
+          "Dans certaines relatives (après un superlatif)"
+        ]
+      },
+      "conditionnel": {
+        "usage": "Fait hypothétique",
+        "contextes": [
+          "Dans les systèmes hypothétiques",
+          "Pour l'information non confirmée",
+          "Pour la politesse"
+        ]
+      }
+    },
+    "transformation_propositions": {
+      "nominalisation": {
+        "definition": "Transformer une proposition en groupe nominal",
+        "exemples": [
+          "Il part → son départ",
+          "Qu'il réussisse me fait plaisir → Sa réussite me fait plaisir"
+        ]
+      },
+      "infinitive": {
+        "definition": "Proposition à l'infinitif",
+        "conditions": "Même sujet que la principale",
+        "exemples": [
+          "Je veux que je parte → Je veux partir",
+          "Il dit qu'il viendra → Il dit venir"
+        ]
+      },
+      "participiale": {
+        "definition": "Proposition au participe",
+        "exemples": [
+          "Comme il était fatigué → Étant fatigué",
+          "Quand il eut fini → Ayant fini"
+        ]
+      }
+    },
+    "analyse_propositions": {
+      "identification": [
+        "1. Repérer les verbes conjugués",
+        "2. Identifier les mots subordonnants",
+        "3. Déterminer les relations de dépendance",
+        "4. Préciser la nature et la fonction"
+      ],
+      "schema_analyse": {
+        "nature": "indépendante/principale/subordonnée",
+        "fonction": "si subordonnée : COD, COI, CC, épithète...",
+        "mode": "indicatif, subjonctif, conditionnel..."
+      }
+    }
+  }
+}

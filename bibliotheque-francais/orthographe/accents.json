@@ -1,0 +1,40 @@
+{
+  "accents": {
+    "aigu": {
+      "description": "Accent aigu (´) - se place uniquement sur le e",
+      "regles": [
+        "Sur le e en fin de syllabe ouverte : café, été, préféré",
+        "Sur le e devant s final : procès, succès, très",
+        "Dans certains mots : médecin, événement"
+      ],
+      "exemples": ["café", "été", "préféré", "procès", "succès", "très", "médecin", "événement"]
+    },
+    "grave": {
+      "description": "Accent grave (`) - se place sur e, a, u",
+      "regles": [
+        "Sur le e en syllabe fermée : père, mère, frère",
+        "Sur le e devant s final : après, près, dès",
+        "Sur a dans : à, çà, là, voilà, déjà",
+        "Sur u dans : où"
+      ],
+      "exemples": ["père", "mère", "frère", "après", "près", "dès", "à", "çà", "là", "voilà", "déjà", "où"]
+    },
+    "circonflexe": {
+      "description": "Accent circonflexe (^) - se place sur toutes les voyelles",
+      "regles": [
+        "Marque souvent la chute d'un s : hôpital (hospital), forêt (forest)",
+        "Distingue des homophones : du/dû, sur/sûr, mur/mûr",
+        "Dans certaines conjugaisons : nous fûmes, qu'il eût"
+      ],
+      "exemples": ["hôpital", "forêt", "château", "dû", "sûr", "mûr", "fûmes", "eût"]
+    },
+    "trema": {
+      "description": "Tréma (¨) - indique que deux voyelles se prononcent séparément",
+      "regles": [
+        "Sur i ou u pour séparer les voyelles : naïf, Noël, coïncidence",
+        "Réforme 1990 : sur u dans aigüe, ambigüe"
+      ],
+      "exemples": ["naïf", "Noël", "coïncidence", "haïr", "maïs", "aigüe", "ambigüe"]
+    }
+  }
+}

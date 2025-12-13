@@ -1,0 +1,60 @@
+{
+  "pluriels": {
+    "regles_generales": {
+      "regle_de_base": "Ajouter un 's' au singulier",
+      "exemples": ["chat → chats", "livre → livres", "maison → maisons"]
+    },
+    "cas_particuliers": {
+      "mots_en_s_x_z": {
+        "regle": "Invariables au pluriel",
+        "exemples": ["souris → souris", "croix → croix", "nez → nez"]
+      },
+      "mots_en_au_eau_eu": {
+        "regle": "Prennent un 'x' au pluriel",
+        "exemples": ["bateau → bateaux", "château → châteaux", "jeu → jeux"],
+        "exceptions": ["pneu → pneus", "bleu → bleus", "landau → landaus"]
+      },
+      "mots_en_ou": {
+        "regle": "Prennent généralement un 's'",
+        "exemples": ["clou → clous", "trou → trous"],
+        "exceptions_x": ["bijou → bijoux", "caillou → cailloux", "chou → choux", "genou → genoux", "hibou → hiboux", "joujou → joujoux", "pou → poux"]
+      },
+      "mots_en_al": {
+        "regle": "Deviennent généralement 'aux'",
+        "exemples": ["cheval → chevaux", "journal → journaux", "animal → animaux"],
+        "exceptions_s": ["bal → bals", "carnaval → carnavals", "festival → festivals", "récital → récitals"]
+      },
+      "mots_en_ail": {
+        "regle": "Prennent généralement un 's'",
+        "exemples": ["détail → détails", "portail → portails"],
+        "exceptions_aux": ["bail → baux", "corail → coraux", "émail → émaux", "soupirail → soupiraux", "travail → travaux", "vantail → vantaux", "vitrail → vitraux"]
+      }
+    },
+    "pluriels_irreguliers": {
+      "œil": "yeux",
+      "ciel": "cieux",
+      "aïeul": "aïeux",
+      "monsieur": "messieurs",
+      "madame": "mesdames",
+      "mademoiselle": "mesdemoiselles"
+    },
+    "noms_composes": {
+      "nom_nom": {
+        "regle": "Les deux éléments prennent la marque du pluriel",
+        "exemples": ["chou-fleur → choux-fleurs", "wagon-lit → wagons-lits"]
+      },
+      "nom_adjectif": {
+        "regle": "Les deux éléments s'accordent",
+        "exemples": ["coffre-fort → coffres-forts", "basse-cour → basses-cours"]
+      },
+      "verbe_nom": {
+        "regle": "Seul le nom peut prendre la marque du pluriel",
+        "exemples": ["tire-bouchon → tire-bouchons", "porte-clé → porte-clés"]
+      },
+      "mot_invariable_nom": {
+        "regle": "Seul le nom s'accorde",
+        "exemples": ["avant-garde → avant-gardes", "arrière-plan → arrière-plans"]
+      }
+    }
+  }
+}

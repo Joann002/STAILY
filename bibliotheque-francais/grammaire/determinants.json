@@ -1,0 +1,114 @@
+{
+  "determinants": {
+    "definition": "Mots qui accompagnent le nom et s'accordent avec lui en genre et en nombre",
+    "role": "Actualisent le nom dans la phrase",
+    "types": {
+      "articles": {
+        "definis": {
+          "formes": ["le", "la", "les"],
+          "contractions": {
+            "du": "de + le",
+            "des": "de + les",
+            "au": "à + le",
+            "aux": "à + les"
+          },
+          "usage": "Désigne quelque chose de connu, de précis",
+          "exemples": ["le chat", "la maison", "les enfants"]
+        },
+        "indefinis": {
+          "formes": ["un", "une", "des"],
+          "usage": "Désigne quelque chose d'indéterminé",
+          "exemples": ["un chat", "une maison", "des enfants"]
+        },
+        "partitifs": {
+          "formes": ["du", "de la", "des"],
+          "usage": "Désigne une partie d'un ensemble",
+          "exemples": ["du pain", "de la confiture", "des épinards"]
+        }
+      },
+      "demonstratifs": {
+        "formes": {
+          "masculin_singulier": "ce (cet devant voyelle ou h muet)",
+          "feminin_singulier": "cette",
+          "pluriel": "ces"
+        },
+        "usage": "Montre, désigne avec précision",
+        "exemples": ["ce livre", "cet homme", "cette femme", "ces enfants"],
+        "renforcement": ["ce livre-ci", "cette maison-là"]
+      },
+      "possessifs": {
+        "formes": {
+          "1ere_personne": {
+            "singulier": ["mon", "ma", "mes"],
+            "pluriel": ["notre", "nos"]
+          },
+          "2eme_personne": {
+            "singulier": ["ton", "ta", "tes"],
+            "pluriel": ["votre", "vos"]
+          },
+          "3eme_personne": {
+            "singulier": ["son", "sa", "ses"],
+            "pluriel": ["leur", "leurs"]
+          }
+        },
+        "usage": "Indique la possession, l'appartenance",
+        "exemples": ["mon livre", "ta maison", "ses enfants", "notre voiture"]
+      },
+      "interrogatifs": {
+        "formes": ["quel", "quelle", "quels", "quelles"],
+        "usage": "Pose une question sur l'identité",
+        "exemples": ["Quel livre ?", "Quelle heure ?", "Quels enfants ?"]
+      },
+      "exclamatifs": {
+        "formes": ["quel", "quelle", "quels", "quelles"],
+        "usage": "Exprime l'admiration, l'étonnement",
+        "exemples": ["Quel beau livre !", "Quelle surprise !"]
+      },
+      "indefinis": {
+        "quantite": {
+          "aucun": "aucune",
+          "chaque": "invariable",
+          "plusieurs": "invariable",
+          "quelques": "pluriel seulement",
+          "tout": "toute, tous, toutes"
+        },
+        "exemples": [
+          "aucun problème",
+          "chaque jour",
+          "plusieurs fois",
+          "quelques amis",
+          "tout le monde"
+        ]
+      },
+      "numeraux": {
+        "cardinaux": ["un", "deux", "trois", "vingt", "cent"],
+        "ordinaux": ["premier", "deuxième", "troisième"],
+        "usage": "Indiquent le nombre ou le rang",
+        "exemples": ["trois livres", "le premier jour"]
+      }
+    },
+    "accord": {
+      "regle_generale": "Le déterminant s'accorde en genre et en nombre avec le nom qu'il accompagne",
+      "cas_particuliers": {
+        "mon_ma_devant_voyelle": "mon amie (et non ma amie)",
+        "tout_accord": {
+          "masculin_singulier": "tout le livre",
+          "feminin_singulier": "toute la journée",
+          "masculin_pluriel": "tous les livres",
+          "feminin_pluriel": "toutes les journées"
+        }
+      }
+    },
+    "emploi": {
+      "obligatoire": "En français, le nom est généralement accompagné d'un déterminant",
+      "omission": {
+        "cas": [
+          "Noms propres : Pierre arrive",
+          "Apostrophes : Bonjour, Marie !",
+          "Énumérations : Hommes, femmes, enfants",
+          "Expressions figées : avoir faim, prendre froid"
+        ]
+      }
+    }
+  }
+}

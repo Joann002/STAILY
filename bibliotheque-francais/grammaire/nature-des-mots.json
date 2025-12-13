@@ -1,0 +1,101 @@
+{
+  "nature_des_mots": {
+    "definition": "Classification des mots selon leur catégorie grammaticale",
+    "mots_variables": {
+      "nom": {
+        "definition": "Désigne une personne, un animal, une chose, une idée",
+        "types": {
+          "commun": ["chat", "maison", "bonheur"],
+          "propre": ["Pierre", "Paris", "France"]
+        },
+        "variations": ["genre", "nombre"]
+      },
+      "determinant": {
+        "definition": "Accompagne le nom et s'accorde avec lui",
+        "types": {
+          "article_defini": ["le", "la", "les"],
+          "article_indefini": ["un", "une", "des"],
+          "article_partitif": ["du", "de la", "des"],
+          "demonstratif": ["ce", "cette", "ces"],
+          "possessif": ["mon", "ma", "mes", "ton", "ta", "tes"],
+          "interrogatif": ["quel", "quelle", "quels", "quelles"],
+          "exclamatif": ["quel", "quelle", "quels", "quelles"],
+          "indefini": ["chaque", "plusieurs", "quelques", "tout"]
+        },
+        "variations": ["genre", "nombre"]
+      },
+      "adjectif": {
+        "definition": "Qualifie ou détermine le nom",
+        "types": {
+          "qualificatif": ["beau", "grand", "intelligent"],
+          "verbal": ["fatigant", "fatigué", "charmant"]
+        },
+        "variations": ["genre", "nombre", "degré"]
+      },
+      "pronom": {
+        "definition": "Remplace un nom ou un groupe nominal",
+        "types": {
+          "personnel": ["je", "tu", "il", "nous", "vous", "ils"],
+          "possessif": ["le mien", "la tienne", "les nôtres"],
+          "demonstratif": ["celui", "celle", "ceux", "celles"],
+          "relatif": ["qui", "que", "dont", "où"],
+          "interrogatif": ["qui", "que", "quoi", "lequel"],
+          "indefini": ["quelqu'un", "personne", "tout", "rien"]
+        },
+        "variations": ["genre", "nombre", "personne", "cas"]
+      },
+      "verbe": {
+        "definition": "Exprime une action, un état, une existence",
+        "types": {
+          "action": ["courir", "manger", "écrire"],
+          "etat": ["être", "sembler", "paraître"],
+          "auxiliaire": ["avoir", "être"]
+        },
+        "variations": ["mode", "temps", "personne", "nombre"]
+      }
+    },
+    "mots_invariables": {
+      "adverbe": {
+        "definition": "Modifie un verbe, un adjectif ou un autre adverbe",
+        "types": {
+          "maniere": ["bien", "mal", "rapidement"],
+          "temps": ["hier", "aujourd'hui", "demain"],
+          "lieu": ["ici", "là", "partout"],
+          "quantite": ["beaucoup", "peu", "très"],
+          "affirmation": ["oui", "certes", "vraiment"],
+          "negation": ["non", "ne", "pas"],
+          "doute": ["peut-être", "probablement"]
+        }
+      },
+      "preposition": {
+        "definition": "Établit un rapport entre deux mots",
+        "exemples": ["à", "de", "dans", "sur", "avec", "pour", "par", "sans", "sous", "vers"]
+      },
+      "conjonction": {
+        "definition": "Relie des mots ou des propositions",
+        "types": {
+          "coordination": ["et", "ou", "ni", "mais", "or", "car", "donc"],
+          "subordination": ["que", "si", "quand", "comme", "parce que", "bien que"]
+        }
+      },
+      "interjection": {
+        "definition": "Exprime un sentiment, une émotion",
+        "exemples": ["ah", "oh", "hélas", "bravo", "chut", "aïe"]
+      }
+    },
+    "identification": {
+      "questions_utiles": [
+        "Le mot peut-il varier ? (variable/invariable)",
+        "Peut-on le remplacer par un autre de même nature ?",
+        "Quelle fonction remplit-il dans la phrase ?",
+        "Avec quels autres mots s'accorde-t-il ?"
+      ],
+      "tests_pratiques": {
+        "nom": "Peut être précédé d'un déterminant",
+        "verbe": "Peut être conjugué",
+        "adjectif": "Peut être mis au féminin/masculin",
+        "adverbe": "Répond aux questions comment, quand, où, combien"
+      }
+    }
+  }
+}

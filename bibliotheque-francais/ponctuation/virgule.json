@@ -1,0 +1,148 @@
+{
+  "virgule": {
+    "definition": "Signe de ponctuation qui marque une pause brève dans la phrase",
+    "roles": [
+      "Séparer des éléments de même fonction",
+      "Isoler des éléments en incise",
+      "Marquer des pauses dans la lecture"
+    ],
+    "emplois_obligatoires": {
+      "enumeration": {
+        "regle": "Sépare les éléments d'une énumération",
+        "exemples": [
+          "Il achète des pommes, des poires, des oranges et des bananes",
+          "Pierre, Paul, Jacques et Marie sont venus"
+        ],
+        "note": "Pas de virgule avant 'et' dans une énumération simple"
+      },
+      "apposition": {
+        "regle": "Encadre un nom en apposition",
+        "exemples": [
+          "Pierre, mon frère, arrive demain",
+          "Paris, capitale de la France, est une belle ville"
+        ]
+      },
+      "epithete_detachee": {
+        "regle": "Isole l'épithète détachée du nom",
+        "exemples": [
+          "Fatigué, il s'endormit",
+          "Les enfants, heureux, jouaient dans le jardin"
+        ]
+      },
+      "complement_circonstanciel_detache": {
+        "regle": "Isole le CC placé en tête de phrase ou détaché",
+        "exemples": [
+          "Hier, il a plu",
+          "Dans le jardin, les fleurs poussent",
+          "Il travaille, le soir, dans son bureau"
+        ]
+      },
+      "proposition_subordonnee_circonstancielle": {
+        "regle": "Isole la subordonnée circonstancielle placée avant la principale",
+        "exemples": [
+          "Quand il pleut, nous restons à la maison",
+          "Bien qu'il soit fatigué, il continue à travailler"
+        ]
+      },
+      "incise": {
+        "regle": "Encadre les propositions incises",
+        "exemples": [
+          "Il viendra, je pense, demain",
+          "Cette histoire, dit-il, est vraie"
+        ]
+      },
+      "apostrophe": {
+        "regle": "Isole l'apostrophe (interpellation)",
+        "exemples": [
+          "Pierre, viens ici !",
+          "Mes amis, écoutez-moi",
+          "Bonjour, madame"
+        ]
+      }
+    },
+    "emplois_facultatifs": {
+      "pause_respiratoire": {
+        "regle": "Marque une pause pour faciliter la lecture",
+        "exemples": [
+          "Les élèves qui ont terminé, peuvent sortir",
+          "Après le repas, nous irons nous promener"
+        ]
+      },
+      "mise_en_relief": {
+        "regle": "Met en relief un élément",
+        "exemples": [
+          "Lui, il ne dit jamais rien",
+          "Cette solution, elle ne me plaît pas"
+        ]
+      }
+    },
+    "emplois_interdits": {
+      "sujet_verbe": {
+        "regle": "Jamais entre le sujet et le verbe",
+        "incorrect": "Pierre, mange",
+        "correct": "Pierre mange"
+      },
+      "verbe_cod": {
+        "regle": "Jamais entre le verbe et son COD",
+        "incorrect": "Il mange, une pomme",
+        "correct": "Il mange une pomme"
+      },
+      "preposition_complement": {
+        "regle": "Jamais entre la préposition et son complément",
+        "incorrect": "Il va, à Paris",
+        "correct": "Il va à Paris"
+      },
+      "avant_parenthese": {
+        "regle": "Jamais avant une parenthèse ouvrante",
+        "incorrect": "Il arrive, (je crois) demain",
+        "correct": "Il arrive (je crois) demain"
+      }
+    },
+    "cas_particuliers": {
+      "et_virgule": {
+        "regle_generale": "Pas de virgule avant 'et'",
+        "exceptions": [
+          "Changement de sujet : Pierre mange, et Paul boit",
+          "Mise en relief : Il est intelligent, et beau",
+          "Énumération longue : rouge, vert, bleu, et jaune"
+        ]
+      },
+      "mais_virgule": {
+        "regle": "Généralement précédé d'une virgule",
+        "exemples": [
+          "Il est petit, mais fort",
+          "Je veux venir, mais je ne peux pas"
+        ]
+      },
+      "car_donc": {
+        "regle": "Généralement précédés d'une virgule",
+        "exemples": [
+          "Il reste, car il pleut",
+          "Il pleut, donc je reste"
+        ]
+      },
+      "propositions_coordonnees": {
+        "regle": "Virgule si les propositions sont longues ou de sens différent",
+        "exemples": [
+          "Il mange et il boit (court, même sujet)",
+          "Pierre mange rapidement, et Paul boit lentement (long, sujets différents)"
+        ]
+      }
+    },
+    "virgule_style": {
+      "rythme": "Crée le rythme de la phrase",
+      "clarte": "Améliore la clarté du message",
+      "expressivite": "Renforce l'expressivité",
+      "exemples_stylistiques": [
+        "Il arriva, vit, vainquit (rythme ternaire)",
+        "Lentement, silencieusement, il s'approcha (gradation)"
+      ]
+    },
+    "erreurs_frequentes": {
+      "virgule_sujet": "Ne pas séparer le sujet du verbe",
+      "virgule_cod": "Ne pas séparer le verbe du COD",
+      "virgule_et": "Éviter la virgule avant 'et' sauf cas particuliers",
+      "oubli_apposition": "Ne pas oublier d'encadrer les appositions"
+    }
+  }
+}

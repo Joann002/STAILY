@@ -1,0 +1,161 @@
+{
+  "espaces_typographiques": {
+    "definition": "Règles d'espacement dans la typographie française",
+    "types_espaces": {
+      "espace_mot": {
+        "definition": "Espace normale entre les mots",
+        "usage": "Sépare les mots dans une phrase",
+        "taille": "Espace standard"
+      },
+      "espace_fine": {
+        "definition": "Espace plus étroite que l'espace normale",
+        "usage": "Avant certains signes de ponctuation",
+        "symbole": "Espace fine insécable"
+      },
+      "espace_insecable": {
+        "definition": "Espace qui ne peut pas être coupée en fin de ligne",
+        "usage": "Évite les coupures malheureuses",
+        "symbole": "Alt + 0160 ou Ctrl + Shift + Espace"
+      }
+    },
+    "ponctuation_haute": {
+      "definition": "Signes qui montent au-dessus de la ligne de base",
+      "signes": [":", ";", "!", "?"],
+      "regle": "Espace fine insécable avant, espace normale après",
+      "exemples": [
+        "Bonjour : comment allez-vous ?",
+        "Attention ! Il arrive.",
+        "Vraiment ? C'est incroyable.",
+        "Il mange ; puis il dort."
+      ],
+      "justification": "Évite que le signe se retrouve seul en début de ligne"
+    },
+    "ponctuation_basse": {
+      "definition": "Signes qui restent sur la ligne de base",
+      "signes": [".", ","],
+      "regle": "Pas d'espace avant, espace normale après",
+      "exemples": [
+        "Il mange, puis il dort.",
+        "C'est fini. Au revoir."
+      ]
+    },
+    "guillemets": {
+      "francais": {
+        "signes": ["«", "»"],
+        "regle": "Espace fine insécable après « et avant »",
+        "exemples": ["Il dit : « Bonjour ! »"],
+        "imbrication": "« Il dit : "Bonjour !" »"
+      },
+      "anglais": {
+        "signes": ["\"", "\""],
+        "regle": "Pas d'espace à l'intérieur",
+        "usage": "Citations dans les citations",
+        "exemples": ["Il dit : « Elle a répondu \"Oui\" »"]
+      }
+    },
+    "parentheses_crochets": {
+      "regle": "Espace avant l'ouverture, après la fermeture",
+      "pas_espace": "Pas d'espace à l'intérieur",
+      "exemples": [
+        "Il arrive (je crois) demain.",
+        "Voir page 10 [note de l'éditeur]."
+      ]
+    },
+    "tirets": {
+      "tiret_cadratin": {
+        "usage": "Dialogue, incise",
+        "regle": "Espace avant et après pour l'incise",
+        "exemples": [
+          "— Bonjour ! dit-il.",
+          "Il arrive — je le sais — demain."
+        ]
+      },
+      "tiret_demi_cadratin": {
+        "usage": "Trait d'union, intervalles",
+        "regle": "Pas d'espace pour trait d'union, espaces pour intervalles",
+        "exemples": [
+          "c'est-à-dire",
+          "pages 10 – 20"
+        ]
+      }
+    },
+    "nombres_unites": {
+      "regle": "Espace insécable entre le nombre et l'unité",
+      "exemples": [
+        "25 kg",
+        "100 €",
+        "15 %",
+        "20 °C"
+      ],
+      "exception": "Pas d'espace avec les symboles ° ' \" : 45°30'15\""
+    },
+    "abreviations": {
+      "titres_civilite": {
+        "regle": "Espace insécable entre l'abréviation et le nom",
+        "exemples": [
+          "M. Dupont",
+          "Mme Martin",
+          "Dr Durand"
+        ]
+      },
+      "unites_mesure": {
+        "regle": "Espace insécable entre le nombre et l'unité abrégée",
+        "exemples": [
+          "5 km",
+          "2 h 30 min",
+          "1 500 m"
+        ]
+      }
+    },
+    "dates_heures": {
+      "dates": {
+        "regle": "Espaces insécables dans les dates",
+        "exemples": [
+          "14 juillet 1789",
+          "1er janvier 2024"
+        ]
+      },
+      "heures": {
+        "regle": "Espace insécable entre les heures et minutes",
+        "exemples": [
+          "14 h 30",
+          "9 h 15 min 30 s"
+        ]
+      }
+    },
+    "numerotation": {
+      "chapitres": "Chapitre 1",
+      "pages": "page 25",
+      "articles": "article 12",
+      "regle": "Espace insécable entre le mot et le numéro"
+    },
+    "cas_particuliers": {
+      "etc": {
+        "regle": "Espace avant, point après",
+        "exemple": "pommes, poires, etc."
+      },
+      "points_suspension": {
+        "regle": "Pas d'espace avant, espace après",
+        "exemple": "Il dit... puis se tait."
+      },
+      "apostrophe": {
+        "regle": "Pas d'espace avant ni après",
+        "exemple": "l'arbre, d'accord"
+      }
+    },
+    "erreurs_frequentes": {
+      "oubli_espace_ponctuation": "Oublier l'espace avant : ; ! ?",
+      "espace_normale_au_lieu_fine": "Utiliser espace normale au lieu de fine",
+      "coupure_malheureuse": "Ne pas utiliser d'espace insécable",
+      "guillemets_anglais": "Utiliser \" au lieu de « »"
+    },
+    "outils_numeriques": {
+      "traitement_texte": "Fonctions d'espacement automatique",
+      "correcteurs": "Vérification des espaces typographiques",
+      "raccourcis": {
+        "espace_insecable": "Ctrl + Shift + Espace",
+        "espace_fine": "Selon le logiciel"
+      }
+    }
+  }
+}

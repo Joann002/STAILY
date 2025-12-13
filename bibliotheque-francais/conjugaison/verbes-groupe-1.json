@@ -1,0 +1,151 @@
+{
+  "verbes_groupe_1": {
+    "definition": "Verbes dont l'infinitif se termine par -er (sauf aller)",
+    "caracteristiques": {
+      "terminaison_infinitif": "-er",
+      "participe_present": "-ant",
+      "participe_passe": "-é",
+      "regularite": "Conjugaison régulière pour la plupart"
+    },
+    "modele_chanter": {
+      "indicatif": {
+        "present": {
+          "je": "chante",
+          "tu": "chantes", 
+          "il_elle": "chante",
+          "nous": "chantons",
+          "vous": "chantez",
+          "ils_elles": "chantent"
+        },
+        "imparfait": {
+          "je": "chantais",
+          "tu": "chantais",
+          "il_elle": "chantait",
+          "nous": "chantions",
+          "vous": "chantiez",
+          "ils_elles": "chantaient"
+        },
+        "passe_simple": {
+          "je": "chantai",
+          "tu": "chantas",
+          "il_elle": "chanta",
+          "nous": "chantâmes",
+          "vous": "chantâtes",
+          "ils_elles": "chantèrent"
+        },
+        "futur": {
+          "je": "chanterai",
+          "tu": "chanteras",
+          "il_elle": "chantera",
+          "nous": "chanterons",
+          "vous": "chanterez",
+          "ils_elles": "chanteront"
+        }
+      },
+      "subjonctif": {
+        "present": {
+          "que_je": "chante",
+          "que_tu": "chantes",
+          "qu_il_elle": "chante",
+          "que_nous": "chantions",
+          "que_vous": "chantiez",
+          "qu_ils_elles": "chantent"
+        }
+      },
+      "conditionnel": {
+        "present": {
+          "je": "chanterais",
+          "tu": "chanterais",
+          "il_elle": "chanterait",
+          "nous": "chanterions",
+          "vous": "chanteriez",
+          "ils_elles": "chanteraient"
+        }
+      },
+      "imperatif": {
+        "present": {
+          "tu": "chante",
+          "nous": "chantons",
+          "vous": "chantez"
+        }
+      }
+    },
+    "particularites_orthographiques": {
+      "verbes_en_cer": {
+        "regle": "c → ç devant a et o",
+        "exemple": "commencer",
+        "conjugaison": [
+          "je commence, nous commençons",
+          "je commençais, il commençait"
+        ]
+      },
+      "verbes_en_ger": {
+        "regle": "g → ge devant a et o", 
+        "exemple": "manger",
+        "conjugaison": [
+          "je mange, nous mangeons",
+          "je mangeais, il mangeait"
+        ]
+      },
+      "verbes_en_yer": {
+        "regle": "y → i devant e muet",
+        "exemple": "nettoyer",
+        "conjugaison": [
+          "je nettoie, tu nettoies, il nettoie",
+          "nous nettoyons, vous nettoyez, ils nettoient"
+        ],
+        "exception": "Les verbes en -ayer peuvent garder le y : je paye/paie"
+      },
+      "verbes_en_eler_eter": {
+        "doublement_consonne": {
+          "regle": "l → ll, t → tt devant e muet",
+          "exemples": {
+            "appeler": "j'appelle, tu appelles, il appelle",
+            "jeter": "je jette, tu jettes, il jette"
+          }
+        },
+        "accent_grave": {
+          "regle": "Certains prennent un accent grave (réforme 1990)",
+          "exemples": {
+            "modeler": "je modèle (ou je modelle)",
+            "acheter": "j'achète, tu achètes"
+          }
+        }
+      },
+      "verbes_accent_grave": {
+        "regle": "è → è devant syllabe muette",
+        "exemples": {
+          "espérer": "j'espère, tu espères, il espère",
+          "préférer": "je préfère, nous préférons"
+        }
+      }
+    },
+    "verbes_frequents": {
+      "reguliers": [
+        "aimer", "parler", "regarder", "écouter", "demander",
+        "donner", "porter", "jouer", "travailler", "habiter",
+        "étudier", "chercher", "trouver", "montrer", "entrer"
+      ],
+      "avec_particularites": {
+        "en_cer": ["commencer", "avancer", "lancer", "placer"],
+        "en_ger": ["manger", "nager", "voyager", "changer"],
+        "en_yer": ["nettoyer", "employer", "envoyer", "essayer"],
+        "en_eler": ["appeler", "épeler", "rappeler", "renouveler"],
+        "en_eter": ["jeter", "projeter", "rejeter", "feuilleter"],
+        "accent_grave": ["acheter", "lever", "mener", "peser"],
+        "accent_aigu": ["espérer", "préférer", "répéter", "céder"]
+      }
+    },
+    "formation_temps": {
+      "present": "radical + e, es, e, ons, ez, ent",
+      "imparfait": "radical + ais, ais, ait, ions, iez, aient",
+      "futur": "infinitif + ai, as, a, ons, ez, ont",
+      "conditionnel": "infinitif + ais, ais, ait, ions, iez, aient",
+      "subjonctif_present": "radical (3e pers. plur.) + e, es, e, ions, iez, ent"
+    },
+    "auxiliaire": {
+      "avoir": "Pour la plupart des verbes du 1er groupe",
+      "etre": "Pour les verbes pronominaux et quelques verbes de mouvement"
+    }
+  }
+}

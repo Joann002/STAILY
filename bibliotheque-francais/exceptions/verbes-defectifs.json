@@ -1,0 +1,191 @@
+{
+  "verbes_defectifs": {
+    "definition": "Verbes qui ne se conjuguent pas à tous les temps, modes ou personnes",
+    "causes": [
+      "Évolution historique de la langue",
+      "Contraintes sémantiques",
+      "Usage spécialisé ou archaïque"
+    ],
+    "categories": {
+      "impersonnels": {
+        "definition": "Ne se conjuguent qu'à la 3ème personne du singulier",
+        "verbes": {
+          "falloir": {
+            "formes_existantes": {
+              "indicatif": {
+                "present": "il faut",
+                "imparfait": "il fallait",
+                "passe_simple": "il fallut",
+                "futur": "il faudra"
+              },
+              "conditionnel": {
+                "present": "il faudrait",
+                "passe": "il aurait fallu"
+              },
+              "subjonctif": {
+                "present": "qu'il faille",
+                "imparfait": "qu'il fallût"
+              },
+              "participe": {
+                "passe": "fallu"
+              }
+            },
+            "usage": "Nécessité, obligation"
+          },
+          "pleuvoir": {
+            "formes_existantes": {
+              "indicatif": "il pleut, il pleuvait, il plut, il pleuvra",
+              "conditionnel": "il pleuvrait",
+              "subjonctif": "qu'il pleuve",
+              "participe": "pleuvant, plu"
+            },
+            "usage": "Phénomène météorologique",
+            "extension": "Peut s'employer au figuré au pluriel : les coups pleuvent"
+          },
+          "neiger": {
+            "formes_principales": "il neige, il neigeait, il neigera",
+            "usage": "Phénomène météorologique"
+          },
+          "greler": {
+            "formes_principales": "il grêle, il grêlait, il grêlera",
+            "usage": "Phénomène météorologique"
+          }
+        }
+      },
+      "defectifs_partiels": {
+        "definition": "Manquent certains temps ou personnes",
+        "verbes": {
+          "gésir": {
+            "definition": "Être couché, reposer (mort)",
+            "formes_existantes": {
+              "indicatif_present": "je gis, tu gis, il gît, nous gisons, vous gisez, ils gisent",
+              "imparfait": "je gisais, tu gisais, il gisait...",
+              "participe_present": "gisant"
+            },
+            "formes_manquantes": "Passé simple, futur, conditionnel, subjonctif",
+            "usage": "Littéraire, épitaphes : 'Ci-gît...'"
+          },
+          "choir": {
+            "definition": "Tomber (archaïque)",
+            "formes_existantes": {
+              "infinitif": "choir",
+              "participe_passe": "chu",
+              "futur": "je choirai, il choira",
+              "conditionnel": "je choirais, il choirait"
+            },
+            "formes_manquantes": "Présent, imparfait, passé simple",
+            "usage": "Très rare, remplacé par 'tomber'"
+          },
+          "échoir": {
+            "definition": "Arriver à échéance, revenir à",
+            "formes_existantes": {
+              "indicatif": "il échoit, il échoyait, il échoira",
+              "conditionnel": "il échoirait",
+              "subjonctif": "qu'il échoie",
+              "participe": "échéant, échu"
+            },
+            "usage": "Juridique, administratif : 'le cas échéant'"
+          },
+          "seoir": {
+            "definition": "Convenir, aller bien",
+            "formes_existantes": {
+              "indicatif_present": "il sied, ils siéent",
+              "imparfait": "il seyait, ils seyaient",
+              "futur": "il siéra, ils siéront",
+              "conditionnel": "il siérait, ils siéraient",
+              "subjonctif": "qu'il siée, qu'ils siéent",
+              "participe_present": "séant, seyant"
+            },
+            "usage": "Soutenu : 'cela ne sied pas'"
+          },
+          "messeoir": {
+            "definition": "Ne pas convenir",
+            "formes_existantes": {
+              "indicatif_present": "il messied, ils messiéent",
+              "imparfait": "il messeyait",
+              "futur": "il messiéra",
+              "conditionnel": "il messiérait",
+              "participe_present": "messéant"
+            },
+            "usage": "Très soutenu, rare"
+          }
+        }
+      },
+      "archaiques": {
+        "definition": "Verbes tombés en désuétude",
+        "verbes": {
+          "ouïr": {
+            "definition": "Entendre (ancien)",
+            "formes_conservees": {
+              "infinitif": "ouïr",
+              "participe_passe": "ouï",
+              "expressions": "par ouï-dire"
+            },
+            "remplacement": "entendre"
+          },
+          "quérir": {
+            "definition": "Chercher, aller chercher",
+            "formes_conservees": {
+              "infinitif": "quérir (après aller, venir, envoyer)",
+              "expressions": "aller quérir, venir quérir"
+            },
+            "usage": "Seulement à l'infinitif"
+          },
+          "issir": {
+            "definition": "Sortir (ancien)",
+            "formes_conservees": {
+              "participe_passe": "issu",
+              "expressions": "être issu de"
+            },
+            "usage": "Seulement dans 'issu de'"
+          }
+        }
+      },
+      "unipersonnels": {
+        "definition": "Ne s'emploient qu'à certaines personnes",
+        "verbes": {
+          "advenir": {
+            "definition": "Arriver, survenir",
+            "formes": "il advient, il advenait, il advint, il adviendra",
+            "usage": "Littéraire : 'advienne que pourra'"
+          },
+          "sourdre": {
+            "definition": "Jaillir, sortir de terre",
+            "formes": "il sourd, ils sourdent",
+            "usage": "Poétique, rare"
+          }
+        }
+      }
+    },
+    "verbes_auxiliaires_defectifs": {
+      "avoir": {
+        "particularite": "Complet mais 'ayons' rare à l'impératif"
+      },
+      "être": {
+        "particularite": "Complet"
+      }
+    },
+    "evolution_langue": {
+      "disparition": "Certains verbes disparaissent de l'usage",
+      "remplacement": "Remplacés par des synonymes plus courants",
+      "conservation": "Maintien dans des expressions figées",
+      "exemples": [
+        "ouïr → entendre",
+        "choir → tomber",
+        "mais conservation dans 'ouï-dire', 'déchoir'"
+      ]
+    },
+    "usage_moderne": {
+      "litteraire": "Emploi stylistique recherché",
+      "juridique": "Maintien dans le vocabulaire spécialisé",
+      "expressions": "Conservation dans des locutions figées",
+      "archaisme": "Effet de style, pastiche"
+    },
+    "conjugaison_pratique": {
+      "verification": "Consulter un dictionnaire pour les formes existantes",
+      "remplacement": "Utiliser des synonymes complets si nécessaire",
+      "prudence": "Éviter les formes inexistantes",
+      "style": "Adapter au registre de langue"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "mots_composes": {
+    "definition": "Mots formés de plusieurs éléments unis par un trait d'union ou soudés",
+    "types": {
+      "soudes": {
+        "description": "Éléments soudés en un seul mot",
+        "exemples": ["portefeuille", "passeport", "bonheur", "malheur", "bienvenue", "autoroute"]
+      },
+      "trait_union": {
+        "description": "Éléments reliés par un trait d'union",
+        "exemples": ["arc-en-ciel", "belle-mère", "c'est-à-dire", "vis-à-vis", "chef-d'œuvre"]
+      },
+      "separes": {
+        "description": "Éléments séparés mais formant une unité de sens",
+        "exemples": ["pomme de terre", "machine à laver", "salle à manger", "chemin de fer"]
+      }
+    },
+    "formation": {
+      "nom_nom": {
+        "description": "Nom + nom",
+        "exemples": ["chou-fleur", "wagon-restaurant", "oiseau-mouche"],
+        "accord": "Les deux noms s'accordent généralement"
+      },
+      "nom_adjectif": {
+        "description": "Nom + adjectif ou adjectif + nom",
+        "exemples": ["coffre-fort", "basse-cour", "grand-mère", "libre-service"],
+        "accord": "Les deux éléments s'accordent"
+      },
+      "verbe_nom": {
+        "description": "Verbe + nom",
+        "exemples": ["tire-bouchon", "porte-clés", "garde-robe", "coupe-papier"],
+        "accord": "Le verbe reste invariable, le nom peut s'accorder"
+      },
+      "adverbe_nom": {
+        "description": "Adverbe + nom",
+        "exemples": ["avant-garde", "arrière-plan", "sous-sol"],
+        "accord": "L'adverbe reste invariable, le nom s'accorde"
+      },
+      "preposition_nom": {
+        "description": "Préposition + nom",
+        "exemples": ["sans-abri", "hors-jeu", "contre-attaque"],
+        "accord": "La préposition reste invariable"
+      }
+    },
+    "accord_pluriel": {
+      "regles_generales": [
+        "Nom + nom : les deux s'accordent (choux-fleurs)",
+        "Nom + adjectif : les deux s'accordent (coffres-forts)",
+        "Verbe + nom : seul le nom s'accorde selon le sens (tire-bouchons)",
+        "Mot invariable + nom : seul le nom s'accorde (avant-gardes)"
+      ],
+      "cas_particuliers": {
+        "sens_singulier": {
+          "description": "Le nom reste au singulier si le sens l'impose",
+          "exemples": ["des timbres-poste", "des arcs-en-ciel"]
+        },
+        "verbe_complement": {
+          "description": "Avec verbe + complément",
+          "exemples": ["des abat-jour", "des perce-neige"]
+        }
+      }
+    },
+    "evolution_orthographique": {
+      "tendance_soudure": {
+        "description": "Tendance à souder les éléments avec le temps",
+        "exemples": [
+          "week-end → weekend",
+          "auto-stop → autostop",
+          "porte-monnaie → portemonnaie"
+        ]
+      },
+      "reforme_1990": {
+        "description": "Rectifications orthographiques de 1990",
+        "exemples": [
+          "porte-monnaie → portemonnaie",
+          "mille-pattes → millepattes",
+          "chauve-souris → chauvesouris"
+        ]
+      }
+    }
+  }
+}

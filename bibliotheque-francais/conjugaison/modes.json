@@ -1,0 +1,149 @@
+{
+  "modes_verbaux": {
+    "definition": "Manière dont le verbe exprime l'action ou l'état",
+    "classification": {
+      "personnels": {
+        "definition": "Modes qui se conjuguent selon les personnes",
+        "types": ["indicatif", "subjonctif", "conditionnel", "impératif"]
+      },
+      "impersonnels": {
+        "definition": "Modes qui ne se conjuguent pas selon les personnes",
+        "types": ["infinitif", "participe", "gérondif"]
+      }
+    },
+    "modes_personnels": {
+      "indicatif": {
+        "definition": "Mode de la réalité, de la certitude",
+        "usage": "Exprime des faits réels, certains",
+        "temps": {
+          "simples": ["présent", "imparfait", "passé simple", "futur simple"],
+          "composes": ["passé composé", "plus-que-parfait", "passé antérieur", "futur antérieur"]
+        },
+        "exemples": [
+          "Il mange (présent)",
+          "Il mangeait (imparfait)",
+          "Il mangea (passé simple)",
+          "Il mangera (futur simple)"
+        ]
+      },
+      "subjonctif": {
+        "definition": "Mode de la subjectivité, du doute, de l'émotion",
+        "usage": "Exprime des faits envisagés dans la pensée",
+        "temps": {
+          "simples": ["présent", "imparfait"],
+          "composes": ["passé", "plus-que-parfait"]
+        },
+        "emplois": [
+          "Après des verbes d'opinion, de sentiment : Je doute qu'il vienne",
+          "Après des conjonctions : bien que, pour que, avant que",
+          "Dans certaines propositions indépendantes : Qu'il vienne !"
+        ],
+        "exemples": [
+          "Il faut qu'il mange (présent)",
+          "Je voulais qu'il mangeât (imparfait)",
+          "Je doute qu'il ait mangé (passé)"
+        ]
+      },
+      "conditionnel": {
+        "definition": "Mode de l'éventualité, de la politesse",
+        "usage": "Exprime des faits soumis à condition",
+        "temps": {
+          "simples": ["présent"],
+          "composes": ["passé 1ère forme", "passé 2ème forme"]
+        },
+        "emplois": [
+          "Condition : S'il venait, je serais content",
+          "Politesse : Pourriez-vous m'aider ?",
+          "Information non confirmée : Il serait malade",
+          "Regret, reproche : Tu aurais dû venir"
+        ],
+        "exemples": [
+          "Il mangerait (présent)",
+          "Il aurait mangé (passé)"
+        ]
+      },
+      "imperatif": {
+        "definition": "Mode de l'ordre, du conseil, de la prière",
+        "usage": "Exprime un ordre, une défense, un conseil",
+        "temps": {
+          "simples": ["présent"],
+          "composes": ["passé"]
+        },
+        "personnes": ["2ème du singulier", "1ère du pluriel", "2ème du pluriel"],
+        "particularites": [
+          "Pas de pronom sujet",
+          "Pas de 's' final pour les verbes du 1er groupe à la 2ème personne : mange, va",
+          "Mais 's' devant 'en' et 'y' : manges-en, vas-y"
+        ],
+        "exemples": [
+          "Mange ! (présent)",
+          "Mangeons ! (présent)",
+          "Mangez ! (présent)",
+          "Aie mangé avant midi ! (passé)"
+        ]
+      }
+    },
+    "modes_impersonnels": {
+      "infinitif": {
+        "definition": "Forme nominale du verbe",
+        "temps": {
+          "present": "manger, finir, vendre",
+          "passe": "avoir mangé, avoir fini, avoir vendu"
+        },
+        "emplois": [
+          "Sujet : Manger est nécessaire",
+          "COD : J'aime manger",
+          "Après préposition : Pour manger",
+          "Proposition infinitive : Je le vois manger"
+        ]
+      },
+      "participe": {
+        "definition": "Forme adjective du verbe",
+        "types": {
+          "present": {
+            "formation": "radical + ant",
+            "exemples": ["mangeant", "finissant", "vendant"],
+            "usage": "Exprime une action simultanée",
+            "accord": "Invariable sauf s'il devient adjectif"
+          },
+          "passe": {
+            "formation": "Variable selon le groupe",
+            "exemples": ["mangé", "fini", "vendu"],
+            "usage": "Exprime une action accomplie",
+            "accord": "Selon les règles d'accord du participe passé"
+          }
+        }
+      },
+      "gerondif": {
+        "definition": "Participe présent précédé de 'en'",
+        "formation": "en + participe présent",
+        "exemples": ["en mangeant", "en finissant", "en vendant"],
+        "usage": [
+          "Simultanéité : Il chante en travaillant",
+          "Moyen : Il réussit en travaillant",
+          "Manière : Il part en courant"
+        ],
+        "accord": "Toujours invariable"
+      }
+    },
+    "concordance_temps": {
+      "definition": "Rapport temporel entre la principale et la subordonnée",
+      "regles": {
+        "principale_present": {
+          "subordonnee": "présent ou passé du subjonctif",
+          "exemples": [
+            "Je veux qu'il vienne (simultanéité)",
+            "Je veux qu'il soit venu (antériorité)"
+          ]
+        },
+        "principale_passe": {
+          "subordonnee": "imparfait ou plus-que-parfait du subjonctif",
+          "exemples": [
+            "Je voulais qu'il vînt (simultanéité)",
+            "Je voulais qu'il fût venu (antériorité)"
+          ]
+        }
+      }
+    }
+  }
+}

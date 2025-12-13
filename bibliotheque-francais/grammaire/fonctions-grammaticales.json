@@ -1,0 +1,143 @@
+{
+  "fonctions_grammaticales": {
+    "definition": "Rôle que joue un mot ou un groupe de mots dans la phrase",
+    "fonctions_essentielles": {
+      "sujet": {
+        "definition": "Ce dont on parle, qui fait l'action",
+        "identification": "Qui est-ce qui ? Qu'est-ce qui ?",
+        "types": {
+          "nom": "Pierre mange",
+          "pronom": "Il mange",
+          "groupe_nominal": "Le petit chat mange",
+          "infinitif": "Manger est nécessaire",
+          "proposition": "Qu'il vienne me surprend"
+        },
+        "accord": "Le verbe s'accorde avec le sujet"
+      },
+      "predicat": {
+        "definition": "Ce qu'on dit du sujet (verbe + compléments essentiels)",
+        "exemples": [
+          "Pierre [mange une pomme]",
+          "Marie [est médecin]",
+          "Paul [va à Paris]"
+        ]
+      },
+      "complement_objet_direct": {
+        "definition": "Complément essentiel du verbe, sans préposition",
+        "identification": "Qui ? Quoi ?",
+        "exemples": [
+          "Je mange une pomme",
+          "Il lit un livre",
+          "Elle voit Pierre"
+        ],
+        "remplacement": "Peut être remplacé par le, la, les"
+      },
+      "complement_objet_indirect": {
+        "definition": "Complément essentiel du verbe, avec préposition",
+        "identification": "À qui ? À quoi ? De qui ? De quoi ?",
+        "exemples": [
+          "Je parle à Pierre",
+          "Il pense à ses vacances",
+          "Elle se souvient de lui"
+        ],
+        "remplacement": "Peut être remplacé par lui, leur, en, y"
+      }
+    },
+    "fonctions_dans_groupe_nominal": {
+      "epithete": {
+        "definition": "Adjectif qui qualifie directement le nom",
+        "position": "Avant ou après le nom",
+        "exemples": ["une belle maison", "un homme grand"],
+        "accord": "S'accorde avec le nom qualifié"
+      },
+      "complement_du_nom": {
+        "definition": "Complète le sens d'un nom",
+        "introduction": "Préposition (de, à, en, pour...)",
+        "exemples": [
+          "une maison de campagne",
+          "un livre d'histoire",
+          "une machine à laver"
+        ]
+      },
+      "apposition": {
+        "definition": "Nom ou groupe nominal qui précise un autre nom",
+        "exemples": [
+          "Pierre, mon frère, arrive",
+          "Paris, capitale de la France"
+        ],
+        "ponctuation": "Généralement entre virgules"
+      }
+    },
+    "fonctions_dans_phrase": {
+      "attribut_sujet": {
+        "definition": "Qualifie le sujet par l'intermédiaire d'un verbe d'état",
+        "verbes_etat": ["être", "sembler", "paraître", "devenir", "rester"],
+        "exemples": [
+          "Pierre est médecin",
+          "Elle semble fatiguée",
+          "Il devient grand"
+        ]
+      },
+      "attribut_objet": {
+        "definition": "Qualifie le COD",
+        "exemples": [
+          "Je trouve ce livre intéressant",
+          "On l'a élu président"
+        ]
+      },
+      "complement_circonstanciel": {
+        "definition": "Indique les circonstances de l'action",
+        "types": {
+          "temps": {
+            "question": "Quand ?",
+            "exemples": ["hier", "le matin", "pendant les vacances"]
+          },
+          "lieu": {
+            "question": "Où ?",
+            "exemples": ["ici", "à Paris", "dans la maison"]
+          },
+          "maniere": {
+            "question": "Comment ?",
+            "exemples": ["rapidement", "avec soin", "en courant"]
+          },
+          "moyen": {
+            "question": "Avec quoi ?",
+            "exemples": ["avec un couteau", "en voiture"]
+          },
+          "cause": {
+            "question": "Pourquoi ?",
+            "exemples": ["à cause de la pluie", "par négligence"]
+          },
+          "but": {
+            "question": "Dans quel but ?",
+            "exemples": ["pour réussir", "afin de partir"]
+          }
+        },
+        "suppression": "Peut généralement être supprimé"
+      }
+    },
+    "fonctions_pronoms": {
+      "sujet": "Il mange",
+      "cod": "Je le vois",
+      "coi": "Je lui parle",
+      "cc": "J'y vais, j'en viens"
+    },
+    "identification_fonctions": {
+      "methode": [
+        "1. Identifier le verbe",
+        "2. Chercher le sujet (qui/qu'est-ce qui ?)",
+        "3. Chercher les compléments essentiels (COD, COI)",
+        "4. Identifier les compléments circonstanciels",
+        "5. Analyser les fonctions dans les groupes nominaux"
+      ],
+      "questions_types": {
+        "sujet": "Qui est-ce qui ? Qu'est-ce qui ?",
+        "cod": "Qui ? Quoi ?",
+        "coi": "À qui ? À quoi ? De qui ? De quoi ?",
+        "cc_temps": "Quand ?",
+        "cc_lieu": "Où ?",
+        "cc_maniere": "Comment ?"
+      }
+    }
+  }
+}

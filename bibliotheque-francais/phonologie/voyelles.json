@@ -1,0 +1,196 @@
+{
+  "voyelles_francaises": {
+    "definition": "Sons produits sans obstruction du passage de l'air dans la cavité buccale",
+    "classification": {
+      "criteres": [
+        "Aperture (degré d'ouverture de la bouche)",
+        "Lieu d'articulation (antérieur/postérieur)",
+        "Labialisation (arrondissement des lèvres)"
+      ]
+    },
+    "voyelles_orales": {
+      "anterieures": {
+        "fermees": {
+          "i": {
+            "graphies": ["i", "î", "ï", "y"],
+            "exemples": ["lit", "île", "naïf", "stylo"],
+            "description": "Voyelle fermée antérieure non arrondie"
+          },
+          "y": {
+            "graphies": ["u", "û", "ü"],
+            "exemples": ["lune", "sûr", "aigüe"],
+            "description": "Voyelle fermée antérieure arrondie"
+          }
+        },
+        "mi_fermees": {
+          "e": {
+            "graphies": ["é", "er", "ez", "et"],
+            "exemples": ["café", "parler", "nez", "et"],
+            "description": "Voyelle mi-fermée antérieure non arrondie"
+          },
+          "ø": {
+            "graphies": ["eu", "œu"],
+            "exemples": ["peu", "nœud"],
+            "description": "Voyelle mi-fermée antérieure arrondie"
+          }
+        },
+        "mi_ouvertes": {
+          "ɛ": {
+            "graphies": ["è", "ê", "ai", "ei", "et"],
+            "exemples": ["père", "tête", "maison", "neige", "jouet"],
+            "description": "Voyelle mi-ouverte antérieure non arrondie"
+          },
+          "œ": {
+            "graphies": ["eu", "œu", "ue"],
+            "exemples": ["peur", "sœur", "cueillir"],
+            "description": "Voyelle mi-ouverte antérieure arrondie"
+          }
+        },
+        "ouverte": {
+          "a": {
+            "graphies": ["a", "à", "â"],
+            "exemples": ["chat", "là", "pâte"],
+            "description": "Voyelle ouverte antérieure"
+          }
+        }
+      },
+      "posterieures": {
+        "fermee": {
+          "u": {
+            "graphies": ["ou", "où", "oû"],
+            "exemples": ["loup", "où", "goût"],
+            "description": "Voyelle fermée postérieure arrondie"
+          }
+        },
+        "mi_fermee": {
+          "o": {
+            "graphies": ["o", "ô", "au", "eau"],
+            "exemples": ["mot", "côte", "auto", "beau"],
+            "description": "Voyelle mi-fermée postérieure arrondie"
+          }
+        },
+        "mi_ouverte": {
+          "ɔ": {
+            "graphies": ["o", "au"],
+            "exemples": ["porte", "Paul"],
+            "description": "Voyelle mi-ouverte postérieure arrondie"
+          }
+        },
+        "ouverte": {
+          "ɑ": {
+            "graphies": ["a", "â"],
+            "exemples": ["pâte", "château"],
+            "description": "Voyelle ouverte postérieure",
+            "note": "Distinction avec /a/ en voie de disparition"
+          }
+        }
+      },
+      "centrale": {
+        "ə": {
+          "nom": "e caduc ou e muet",
+          "graphies": ["e"],
+          "exemples": ["petit", "demain"],
+          "description": "Voyelle centrale, souvent non prononcée"
+        }
+      }
+    },
+    "voyelles_nasales": {
+      "ɛ̃": {
+        "graphies": ["in", "im", "yn", "ym", "ain", "aim", "ein", "eim"],
+        "exemples": ["vin", "simple", "lynx", "sympa", "pain", "faim", "plein", "Reims"],
+        "description": "Voyelle nasale antérieure"
+      },
+      "ɑ̃": {
+        "graphies": ["an", "am", "en", "em"],
+        "exemples": ["dans", "champ", "vent", "temps"],
+        "description": "Voyelle nasale postérieure"
+      },
+      "ɔ̃": {
+        "graphies": ["on", "om"],
+        "exemples": ["bon", "ombre"],
+        "description": "Voyelle nasale postérieure arrondie"
+      },
+      "œ̃": {
+        "graphies": ["un", "um"],
+        "exemples": ["brun", "parfum"],
+        "description": "Voyelle nasale antérieure arrondie",
+        "note": "En voie de disparition, souvent remplacée par /ɛ̃/"
+      }
+    },
+    "semi_voyelles": {
+      "j": {
+        "nom": "yod",
+        "graphies": ["i", "y", "il", "ill"],
+        "exemples": ["pied", "yeux", "travail", "fille"],
+        "description": "Semi-voyelle antérieure"
+      },
+      "ɥ": {
+        "nom": "u consonne",
+        "graphies": ["u"],
+        "exemples": ["lui", "nuit", "huile"],
+        "description": "Semi-voyelle antérieure arrondie"
+      },
+      "w": {
+        "nom": "w",
+        "graphies": ["ou", "w"],
+        "exemples": ["oui", "week-end"],
+        "description": "Semi-voyelle postérieure arrondie"
+      }
+    },
+    "phenomenes_vocaliques": {
+      "e_caduc": {
+        "definition": "Voyelle /ə/ qui peut disparaître",
+        "regles": [
+          "Maintenu en début de mot : petit",
+          "Supprimé en fin de mot : table [tabl]",
+          "Variable à l'intérieur : samedi [sam(ə)di]"
+        ]
+      },
+      "harmonisation": {
+        "definition": "Influence d'une voyelle sur une autre",
+        "exemples": [
+          "aimer [eme] → [ɛme]",
+          "fermeture en syllabe fermée"
+        ]
+      },
+      "allongement": {
+        "definition": "Voyelles longues en syllabe fermée",
+        "contextes": [
+          "Devant consonne allongeante : /r/, /z/, /ʒ/, /v/",
+          "Voyelles accentuées"
+        ],
+        "exemples": ["pâte [pɑːt]", "rose [roːz]"]
+      }
+    },
+    "variations_regionales": {
+      "nord_sud": {
+        "e_ferme_ouvert": "Distinction variable selon les régions",
+        "a_anterieur_posterieur": "Neutralisation progressive",
+        "nasales": "Variations dans la réalisation"
+      },
+      "francophonie": {
+        "quebec": "Diphtongaison de certaines voyelles",
+        "belgique": "Réalisations spécifiques",
+        "suisse": "Particularités vocaliques"
+      }
+    },
+    "acquisition": {
+      "ordre_emergence": [
+        "Voyelles cardinales : /a/, /i/, /u/",
+        "Voyelles moyennes : /e/, /o/",
+        "Voyelles nasales",
+        "Semi-voyelles"
+      ],
+      "difficultes": [
+        "Distinction /e/ - /ɛ/",
+        "Voyelles nasales",
+        "E caduc"
+      ]
+    },
+    "orthographe_phonetique": {
+      "correspondances": "Relations graphie-phonie complexes",
+      "ambiguites": "Plusieurs graphies pour un même son",
+      "exceptions": "Nombreuses irrégularités historiques"
+    }
+  }
+}

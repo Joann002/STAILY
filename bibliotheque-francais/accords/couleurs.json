@@ -1,0 +1,122 @@
+{
+  "accord_couleurs": {
+    "adjectifs_simples": {
+      "regle": "S'accordent en genre et en nombre",
+      "exemples": [
+        "rouge → rouges",
+        "vert → verte, verts, vertes",
+        "noir → noire, noirs, noires",
+        "blanc → blanche, blancs, blanches",
+        "bleu → bleue, bleus, bleues"
+      ],
+      "liste_couleurs_variables": [
+        "blanc", "noir", "rouge", "vert", "bleu", "jaune",
+        "gris", "brun", "violet", "rose", "beige"
+      ]
+    },
+    "adjectifs_composes": {
+      "regle": "Invariables",
+      "formation": "couleur + nuance",
+      "exemples": [
+        "bleu clair → des robes bleu clair",
+        "vert foncé → des yeux vert foncé",
+        "rouge vif → des fleurs rouge vif",
+        "jaune pâle → des tissus jaune pâle"
+      ],
+      "nuances_courantes": [
+        "clair", "foncé", "vif", "pâle", "tendre",
+        "sombre", "éclatant", "brillant", "mat"
+      ]
+    },
+    "noms_employes_adjectivement": {
+      "regle_generale": "Invariables",
+      "origine": "Noms d'objets, de fleurs, de fruits, de pierres",
+      "exemples": [
+        "orange → des robes orange",
+        "marron → des chaussures marron",
+        "cerise → des lèvres cerise",
+        "chocolat → des cheveux chocolat",
+        "or → des bagues or",
+        "argent → des bijoux argent"
+      ],
+      "liste_invariables": [
+        "abricot", "acajou", "amarante", "auburn", "avocat",
+        "azur", "bistre", "bordeaux", "brique", "bronze",
+        "café", "caramel", "carmin", "cerise", "champagne",
+        "châtain", "chocolat", "citron", "corail", "crème",
+        "ébène", "émeraude", "grenat", "indigo", "ivoire",
+        "kaki", "lilas", "marine", "marron", "nacre",
+        "noisette", "ocre", "olive", "or", "orange",
+        "pastel", "perle", "prune", "rouille", "rubis",
+        "sable", "saumon", "sépia", "turquoise", "vermillon"
+      ],
+      "exceptions_variables": {
+        "rose": "des robes roses",
+        "mauve": "des fleurs mauves",
+        "fauve": "des pelages fauves",
+        "incarnat": "des teints incarnats",
+        "pourpre": "des étoffes pourpres (ou pourpre)"
+      }
+    },
+    "cas_particuliers": {
+      "deux_couleurs_unies": {
+        "regle": "Invariables si les deux couleurs s'appliquent au même objet",
+        "exemples": [
+          "des drapeaux bleu, blanc, rouge",
+          "des yeux bleu-vert",
+          "des cheveux poivre et sel"
+        ]
+      },
+      "couleurs_melangees": {
+        "regle": "Invariables",
+        "exemples": [
+          "des tissus rouge et noir",
+          "des fleurs blanc et rose"
+        ]
+      },
+      "demi_semi_mi": {
+        "regle": "Invariables devant l'adjectif",
+        "exemples": [
+          "des robes demi-noires",
+          "des tissus semi-transparents",
+          "des tons mi-clairs"
+        ]
+      }
+    },
+    "expressions_figees": {
+      "invariables": [
+        "des colères noires",
+        "des peurs bleues",
+        "des mains vertes",
+        "des idées noires"
+      ],
+      "variables": [
+        "des petits pois verts",
+        "des haricots verts",
+        "des cartes blanches"
+      ]
+    },
+    "regles_memorisation": {
+      "simple": "Un seul mot de couleur → variable",
+      "compose": "Plusieurs mots → invariable",
+      "nom_couleur": "Nom utilisé comme couleur → invariable (sauf exceptions)",
+      "exceptions_courantes": "rose, mauve, fauve, incarnat, pourpre → variables"
+    },
+    "exemples_application": {
+      "corrects": [
+        "des robes vertes",
+        "des chaussures marron",
+        "des yeux bleu clair",
+        "des fleurs roses",
+        "des tissus orange",
+        "des cheveux châtain"
+      ],
+      "incorrects": [
+        "des robes marrons → marron",
+        "des yeux bleus clairs → bleu clair",
+        "des fleurs rose → roses",
+        "des tissus oranges → orange"
+      ]
+    }
+  }
+}

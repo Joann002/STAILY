@@ -1,0 +1,153 @@
+{
+  "accord_verbes": {
+    "accord_sujet_verbe": {
+      "regle_generale": "Le verbe s'accorde en nombre et en personne avec son sujet",
+      "exemples": [
+        "Je mange → nous mangeons",
+        "Tu chantes → vous chantez",
+        "Il court → ils courent"
+      ]
+    },
+    "cas_particuliers": {
+      "sujets_multiples": {
+        "coordination_et": {
+          "regle": "Verbe au pluriel",
+          "exemples": ["Pierre et Paul arrivent", "Le chat et le chien jouent"],
+          "exception_meme_personne": "Mon frère et moi partons (1ère personne du pluriel)"
+        },
+        "coordination_ou_ni": {
+          "regle": "Accord avec le sujet le plus proche ou au pluriel selon le sens",
+          "exemples": [
+            "Pierre ou Paul viendra (un seul)",
+            "Ni Pierre ni Paul ne viendront (aucun des deux)",
+            "Le père ou la mère peuvent signer (l'un ou l'autre)"
+          ]
+        },
+        "hierarchie_personnes": {
+          "regle": "1ère personne > 2ème personne > 3ème personne",
+          "exemples": [
+            "Toi et moi partons (1ère pers. pluriel)",
+            "Toi et lui partez (2ème pers. pluriel)",
+            "Lui et elle partent (3ème pers. pluriel)"
+          ]
+        }
+      },
+      "sujet_collectif": {
+        "avec_complement": {
+          "regle": "Accord avec le collectif ou son complément selon le sens",
+          "exemples": [
+            "La majorité des élèves a réussi (ensemble)",
+            "La majorité des élèves ont réussi (individus)",
+            "Une foule de gens se pressait/se pressaient"
+          ]
+        },
+        "pourcentage": {
+          "regle": "Accord généralement avec le complément",
+          "exemples": [
+            "20% des élèves ont réussi",
+            "La moitié des pommes sont pourries"
+          ]
+        }
+      },
+      "sujet_inverse": {
+        "regle": "Le verbe s'accorde avec le sujet même inversé",
+        "exemples": [
+          "Arrivent les vacances",
+          "Que disent les journaux ?",
+          "Ainsi parlaient nos ancêtres"
+        ]
+      },
+      "ce_qui_ce_que": {
+        "regle": "Accord avec l'antécédent de 'ce'",
+        "exemples": [
+          "C'est moi qui ai raison",
+          "C'est toi qui as tort",
+          "Ce sont eux qui ont gagné"
+        ]
+      },
+      "il_y_a": {
+        "regle": "'Il y a' reste invariable",
+        "exemples": ["Il y a des fleurs", "Il y avait des problèmes"]
+      }
+    },
+    "verbes_impersonnels": {
+      "definition": "Verbes qui ne se conjuguent qu'à la 3ème personne du singulier",
+      "types": {
+        "meteorologiques": ["pleuvoir", "neiger", "grêler", "tonner"],
+        "expressions": ["il faut", "il vaut mieux", "il s'agit de", "il arrive que"],
+        "exemples": [
+          "Il pleut",
+          "Il faut partir",
+          "Il s'agit de réussir"
+        ]
+      },
+      "accord": "Toujours 3ème personne du singulier, même avec un sujet réel",
+      "sujet_reel": {
+        "exemples": [
+          "Il arrive des problèmes (des problèmes arrivent)",
+          "Il manque des livres (des livres manquent)"
+        ]
+      }
+    },
+    "verbes_pronominaux": {
+      "accord_participe": {
+        "essentiellement_pronominaux": {
+          "regle": "Accord avec le sujet",
+          "exemples": ["Elle s'est évanouie", "Ils se sont enfuis"],
+          "verbes": ["s'évanouir", "s'enfuir", "se repentir", "s'abstenir"]
+        },
+        "accidentellement_pronominaux": {
+          "regle": "Accord selon la fonction du pronom réfléchi",
+          "cod": {
+            "regle": "Accord avec le sujet si le pronom est COD",
+            "exemples": ["Elle s'est lavée (elle a lavé elle-même)"]
+          },
+          "coi": {
+            "regle": "Pas d'accord si le pronom est COI",
+            "exemples": ["Elle s'est lavé les mains (elle a lavé les mains à elle-même)"]
+          }
+        },
+        "sens_passif": {
+          "regle": "Accord avec le sujet",
+          "exemples": ["Ces livres se sont bien vendus"]
+        }
+      }
+    },
+    "accord_avec_avoir": {
+      "regle_generale": "Pas d'accord du participe passé",
+      "exemples": ["J'ai mangé", "Elle a chanté", "Nous avons couru"],
+      "exception_cod_antérieur": {
+        "regle": "Accord si le COD est placé avant le verbe",
+        "exemples": [
+          "Les pommes que j'ai mangées",
+          "Je les ai vues",
+          "Quelle robe as-tu achetée ?"
+        ],
+        "cas_particuliers": {
+          "en": "Généralement pas d'accord avec 'en' : J'en ai mangé",
+          "le_neutre": "Pas d'accord avec 'le' neutre : Elle est plus belle que je ne l'avais pensé"
+        }
+      }
+    },
+    "accord_avec_etre": {
+      "regle_generale": "Accord du participe passé avec le sujet",
+      "exemples": [
+        "Elle est venue",
+        "Ils sont partis",
+        "Elles sont arrivées"
+      ],
+      "verbes_etre": [
+        "aller", "venir", "arriver", "partir", "entrer", "sortir",
+        "monter", "descendre", "naître", "mourir", "rester", "tomber"
+      ]
+    },
+    "infinitif_ou_participe": {
+      "test_remplacement": "Remplacer par un verbe du 3ème groupe (vendre/vendu)",
+      "exemples": [
+        "J'ai mangé (j'ai vendu) → participe passé",
+        "Je vais manger (je vais vendre) → infinitif",
+        "Sans manger (sans vendre) → infinitif"
+      ]
+    }
+  }
+}
