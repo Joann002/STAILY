@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { XCircle, ArrowLeft, FileText, Copy, Download, Brain, CheckCircle, Sparkles, BarChart3, Clock, Hash, Type, Languages, ClipboardCheck } from 'lucide-react';
 
 // Configuration de l'API backend
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
@@ -23,7 +24,6 @@ interface CorrectedSegment {
 
 export default function TextView() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [segments, setSegments] = useState<Segment[]>([]);
   const [metadata, setMetadata] = useState<any>(null);
   const [correctedSegments, setCorrectedSegments] = useState<CorrectedSegment[] | null>(null);
@@ -31,7 +31,7 @@ export default function TextView() {
   const [showCorrected, setShowCorrected] = useState(false);
   const [correctionSummary, setCorrectionSummary] = useState<string>('');
   const [correctionStats, setCorrectionStats] = useState<any>(null);
-  const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [notification, setNotification] = useState<{ message: React.ReactNode; type: 'success' | 'error' } | null>(null);
   const [isApplyingRules, setIsApplyingRules] = useState(false);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function TextView() {
   const handleApplyRules = async () => {
     setIsApplyingRules(true);
     setNotification({
-      message: '🤖 Application des règles de verbatim corrigé en cours...',
+      message: <><Brain className="inline-block w-4 h-4 mr-2" /> Application des règles de verbatim corrigé en cours...</>,
       type: 'success'
     });
 
@@ -114,7 +114,7 @@ export default function TextView() {
         }));
 
         setNotification({
-          message: '✅ Règles de verbatim corrigé appliquées avec succès !',
+          message: <><CheckCircle className="inline-block w-4 h-4 mr-2" /> Règles de verbatim corrigé appliquées avec succès !</>,
           type: 'success'
         });
       } else {
@@ -124,7 +124,7 @@ export default function TextView() {
     } catch (error) {
       console.error('Erreur lors de l\'application des règles:', error);
       setNotification({
-        message: `❌ Erreur: ${error instanceof Error ? error.message : 'Erreur inconnue'}`,
+        message: <><XCircle className="inline-block w-4 h-4 mr-2" /> Erreur: {error instanceof Error ? error.message : 'Erreur inconnue'}</>,
         type: 'error'
       });
     } finally {
@@ -138,7 +138,7 @@ export default function TextView() {
       : segments.map(seg => seg.text).join('\n');
     
     navigator.clipboard.writeText(textToUse);
-    setNotification({ message: '✅ Texte copié dans le presse-papier !', type: 'success' });
+    setNotification({ message: <><ClipboardCheck className="inline-block w-4 h-4 mr-2" /> Texte copié dans le presse-papier !</>, type: 'success' });
   };
 
   const handleDownloadText = () => {
@@ -162,7 +162,7 @@ export default function TextView() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            ❌ Aucune transcription disponible
+            <XCircle className="inline-block w-6 h-6 mr-2" /> Aucune transcription disponible
           </h1>
           <button
             onClick={handleBack}
@@ -186,14 +186,14 @@ export default function TextView() {
               : 'bg-red-500 text-white'
           }`}>
             <span className="text-lg">
-              {notification.type === 'success' ? '✅' : '❌'}
+              {notification.type === 'success' ? <CheckCircle className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
             </span>
             <span className="font-medium">{notification.message}</span>
             <button
               onClick={() => setNotification(null)}
               className="ml-4 text-white hover:text-gray-200 transition-colors"
             >
-              ✕
+              <XCircle className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -207,14 +207,12 @@ export default function TextView() {
               onClick={handleBack}
               className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Retour</span>
             </button>
 
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {correctedSegments ? '📊 Comparaison Brut vs Corrigé' : '📄 Texte brut'}
+              {correctedSegments ? <><BarChart3 className="inline-block w-6 h-6 mr-2" /> Comparaison Brut vs Corrigé</> : <><FileText className="inline-block w-6 h-6 mr-2" /> Texte brut</>}
             </h1>
 
             <div className="flex space-x-2">
@@ -223,9 +221,7 @@ export default function TextView() {
                 className="flex items-center space-x-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg transition-colors"
                 title="Copier le texte"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
+                <Copy className="w-5 h-5" />
                 <span className="hidden sm:inline">Copier</span>
               </button>
 
@@ -234,9 +230,7 @@ export default function TextView() {
                 className="flex items-center space-x-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
                 title="Télécharger le texte"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
+                <Download className="w-5 h-5" />
                 <span className="hidden sm:inline">Télécharger</span>
               </button>
             </div>
@@ -274,7 +268,7 @@ export default function TextView() {
               <div className="flex items-center justify-between">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-purple-900 dark:text-purple-100 mb-1">
-                    🧠 Verbatim Corrigé avec GPT-4o-mini
+                    <Brain className="inline-block w-5 h-5 mr-2" /> Verbatim Corrigé avec GPT-4o-mini
                   </h3>
                   <p className="text-sm text-purple-700 dark:text-purple-300">
                     Appliquer les règles professionnelles : suppression hésitations, correction grammaire, ponctuation optimale
@@ -294,7 +288,7 @@ export default function TextView() {
                       <span>Traitement...</span>
                     </span>
                   ) : (
-                    '✨ Appliquer les règles CV'
+                    <><Sparkles className="inline-block w-5 h-5 mr-2" /> Appliquer les règles CV</>
                   )}
                 </button>
               </div>
@@ -305,15 +299,15 @@ export default function TextView() {
           {correctedSegments && (
             <div className="bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800 rounded-lg p-4">
               <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-1">
-                ✅ Règles appliquées avec succès !
+                <CheckCircle className="inline-block w-5 h-5 mr-2" /> Règles appliquées avec succès !
               </h3>
               <p className="text-sm text-green-700 dark:text-green-300 mb-2">
                 {correctionSummary}
               </p>
               {correctionStats && (
                 <div className="flex space-x-4 text-xs text-green-600 dark:text-green-400">
-                  <span>📝 {correctionStats.segmentsModified}/{correctionStats.totalSegments} segments modifiés</span>
-                  <span>🎯 {correctionStats.tokensUsed} tokens utilisés</span>
+                  <span><Type className="inline-block w-3 h-3 mr-1" /> {correctionStats.segmentsModified}/{correctionStats.totalSegments} segments modifiés</span>
+                  <span><Hash className="inline-block w-3 h-3 mr-1" /> {correctionStats.tokensUsed} tokens utilisés</span>
                 </div>
               )}
             </div>
@@ -325,7 +319,7 @@ export default function TextView() {
           // Vue simple : texte brut uniquement
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
             <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">
-              📄 Transcription brute
+              <FileText className="inline-block w-5 h-5 mr-2" /> Transcription brute
             </h2>
             <div className="prose dark:prose-invert max-w-none">
               <div className="space-y-4 text-gray-800 dark:text-gray-200 leading-relaxed">
@@ -341,10 +335,10 @@ export default function TextView() {
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
                 <span>
-                  📊 {segments.length} lignes • {segments.map(s => s.text).join(' ').split(' ').length} mots
+                  <BarChart3 className="inline-block w-4 h-4 mr-1" /> {segments.length} lignes • {segments.map(s => s.text).join(' ').split(' ').length} mots
                 </span>
                 <span>
-                  📝 {segments.map(s => s.text).join('').length} caractères
+                  <Type className="inline-block w-4 h-4 mr-1" /> {segments.map(s => s.text).join('').length} caractères
                 </span>
               </div>
             </div>
@@ -356,18 +350,18 @@ export default function TextView() {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
-                  📄 Version brute
+                  <FileText className="inline-block w-5 h-5 mr-2" /> Version brute
                 </h2>
                 <button
                   onClick={() => {
                     const text = segments.map(seg => seg.text).join('\n');
                     navigator.clipboard.writeText(text);
-                    setNotification({ message: '✅ Texte brut copié !', type: 'success' });
+                    setNotification({ message: <><ClipboardCheck className="inline-block w-4 h-4 mr-2" /> Texte brut copié !</>, type: 'success' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                   title="Copier le texte brut"
                 >
-                  📋 Copier
+                  <Copy className="inline-block w-4 h-4 mr-1" /> Copier
                 </button>
               </div>
               
@@ -384,9 +378,9 @@ export default function TextView() {
               {/* Stats brut */}
               <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                  <p>📊 {segments.length} segments</p>
-                  <p>📝 {segments.map(s => s.text).join(' ').split(' ').length} mots</p>
-                  <p>🔤 {segments.map(s => s.text).join('').length} caractères</p>
+                  <p><BarChart3 className="inline-block w-3 h-3 mr-1" /> {segments.length} segments</p>
+                  <p><Type className="inline-block w-3 h-3 mr-1" /> {segments.map(s => s.text).join(' ').split(' ').length} mots</p>
+                  <p><Hash className="inline-block w-3 h-3 mr-1" /> {segments.map(s => s.text).join('').length} caractères</p>
                 </div>
               </div>
             </div>
@@ -395,18 +389,18 @@ export default function TextView() {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-semibold text-green-800 dark:text-green-200">
-                  ✨ Version corrigée
+                  <Sparkles className="inline-block w-5 h-5 mr-2" /> Version corrigée
                 </h2>
                 <button
                   onClick={() => {
                     const text = correctedSegments.map(seg => seg.text).join('\n');
                     navigator.clipboard.writeText(text);
-                    setNotification({ message: '✅ Texte corrigé copié !', type: 'success' });
+                    setNotification({ message: <><ClipboardCheck className="inline-block w-4 h-4 mr-2" /> Texte corrigé copié !</>, type: 'success' });
                   }}
                   className="text-sm text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
                   title="Copier le texte corrigé"
                 >
-                  📋 Copier
+                  <Copy className="inline-block w-4 h-4 mr-1" /> Copier
                 </button>
               </div>
               
@@ -423,9 +417,9 @@ export default function TextView() {
               {/* Stats corrigé */}
               <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-800">
                 <div className="text-xs text-green-600 dark:text-green-400 space-y-1">
-                  <p>📊 {correctedSegments.length} segments</p>
-                  <p>📝 {correctedSegments.map(s => s.text).join(' ').split(' ').length} mots</p>
-                  <p>🔤 {correctedSegments.map(s => s.text).join('').length} caractères</p>
+                  <p><BarChart3 className="inline-block w-3 h-3 mr-1" /> {correctedSegments.length} segments</p>
+                  <p><Type className="inline-block w-3 h-3 mr-1" /> {correctedSegments.map(s => s.text).join(' ').split(' ').length} mots</p>
+                  <p><Hash className="inline-block w-3 h-3 mr-1" /> {correctedSegments.map(s => s.text).join('').length} caractères</p>
                 </div>
               </div>
             </div>
