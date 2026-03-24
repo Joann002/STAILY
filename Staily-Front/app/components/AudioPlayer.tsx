@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import { Music, Play, Pause, FileText, Headphones } from 'lucide-react';
 
 interface Segment {
   id: number;
@@ -97,7 +98,7 @@ export default function AudioPlayer({ audioUrl, segments }: AudioPlayerProps) {
             </button>
             
             <div>
-              <div className="text-sm font-medium">🎵 Lecture audio</div>
+              <div className="text-sm font-medium"><Headphones className="inline-block w-4 h-4 mr-1" /> Lecture audio</div>
               <div className="text-xs opacity-90">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </div>
@@ -139,7 +140,7 @@ export default function AudioPlayer({ audioUrl, segments }: AudioPlayerProps) {
       {/* Visualisation des segments */}
       <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
         <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-          📝 Transcription synchronisée
+          <FileText className="inline-block w-4 h-4 mr-2" /> Transcription synchronisée
         </h3>
         
         <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2">
@@ -171,9 +172,7 @@ export default function AudioPlayer({ audioUrl, segments }: AudioPlayerProps) {
                 </p>
                 {isActive && (
                   <div className="mt-2 flex items-center text-xs text-blue-600 dark:text-blue-400">
-                    <svg className="w-4 h-4 mr-1 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
+                    <Play className="w-4 h-4 mr-1 animate-pulse" fill="currentColor" />
                     En cours de lecture
                   </div>
                 )}

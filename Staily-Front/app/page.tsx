@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import AudioPlayer from './components/AudioPlayer';
+import { Film, Upload, Languages, Cpu, Rocket, Clock, Mic, FileText, Video, Music, ChevronRight, RefreshCcw, BookOpen, Database, CheckCircle, XCircle, Play, Pause } from 'lucide-react';
 
 // Configuration de l'API backend
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
@@ -161,7 +162,7 @@ export default function Home() {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          🎬 Transcription Audio/Vidéo
+          <Film className="inline-block w-8 h-8 mr-2" /> Transcription Audio/Vidéo
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">
           {hasUploaded ? 'Votre transcription' : 'Uploadez une vidéo ou un fichier audio'}
@@ -174,7 +175,7 @@ export default function Home() {
 
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
-              📤 Upload de fichier
+              <Upload className="inline-block w-6 h-6 mr-2" /> Upload de fichier
             </h2>
 
             <div className="space-y-4">
@@ -208,7 +209,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    🌍 Langue
+                    <Languages className="inline-block w-4 h-4 mr-1" /> Langue
                   </label>
                   <select
                     value={selectedLanguage}
@@ -236,7 +237,7 @@ export default function Home() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    🤖 Modèle Whisper
+                    <Cpu className="inline-block w-4 h-4 mr-1" /> Modèle Whisper
                   </label>
                   <select
                     value={selectedModel}
@@ -263,9 +264,9 @@ export default function Home() {
                          text-white font-semibold py-3 px-6 rounded-lg 
                          transition-colors duration-200 disabled:cursor-not-allowed"
               >
-                {uploading ? '⏳ Upload en cours...' :
-                  transcribing ? '🎤 Transcription en cours...' :
-                    '🚀 Upload et Transcrire'}
+                {uploading ? <><Clock className="inline-block w-4 h-4 mr-2" /> Upload en cours...</> :
+                  transcribing ? <><Mic className="inline-block w-4 h-4 mr-2" /> Transcription en cours...</> :
+                    <><Rocket className="inline-block w-4 h-4 mr-2" /> Upload et Transcrire</>}
               </button>
             </div>
           </div>
@@ -273,14 +274,14 @@ export default function Home() {
           {error && (
             <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
               <p className="text-red-800 dark:text-red-200">
-                <strong>❌ Erreur:</strong> {error}
+                <XCircle className="inline-block w-4 h-4 mr-2" /> Erreur: {error}
               </p>
             </div>
           )}
 
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-              📖 Instructions
+              <BookOpen className="inline-block w-6 h-6 mr-2" /> Instructions
             </h3>
             <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300">
               <li>Sélectionnez un fichier vidéo (.mp4, .mkv) ou audio (.mp3, .wav)</li>
@@ -291,7 +292,7 @@ export default function Home() {
 
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-sm text-blue-800 dark:text-blue-200">
-                <strong>💾 Cache intelligent:</strong> Si vous uploadez la même vidéo, la transcription sera instantanée !
+                <Database className="inline-block w-4 h-4 mr-2" /> Cache intelligent: Si vous uploadez la même vidéo, la transcription sera instantanée !
               </p>
             </div>
           </div>
@@ -309,7 +310,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
-                      {uploadedFile.file.mimetype === 'video/mp4' || uploadedFile.file.mimetype === 'video/x-matroska' ? '🎥 Vidéo' : '🎵 Audio'}
+                      {uploadedFile.file.mimetype === 'video/mp4' || uploadedFile.file.mimetype === 'video/x-matroska' ? <><Video className="inline-block w-5 h-5 mr-2" /> Vidéo</> : <><Music className="inline-block w-5 h-5 mr-2" /> Audio</>}
                     </h2>
                     <button
                       onClick={handleReset}
@@ -363,7 +364,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
                   <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
                   <p className="text-gray-600 dark:text-gray-400">
-                    🎤 Transcription en cours...
+                    <Mic className="inline-block w-5 h-5 mr-2" /> Transcription en cours...
                   </p>
                 </div>
               )}
@@ -371,7 +372,7 @@ export default function Home() {
               {error && (
                 <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
                   <p className="text-red-800 dark:text-red-200">
-                    <strong>❌ Erreur:</strong> {error}
+                    <XCircle className="inline-block w-4 h-4 mr-2" /> Erreur: {error}
                   </p>
                 </div>
               )}
@@ -380,7 +381,7 @@ export default function Home() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
-                      📝 Transcription complète
+                      <FileText className="inline-block w-5 h-5 mr-2" /> Transcription complète
                     </h2>
                     <button
                       onClick={() => {
@@ -396,9 +397,7 @@ export default function Home() {
                       className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                     >
                       <span>Voir le texte complet</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                      <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
 
@@ -406,7 +405,7 @@ export default function Home() {
                   {transcription.fromCache && (
                     <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                       <p className="text-sm text-green-800 dark:text-green-200">
-                        ⚡ <strong>Récupéré depuis le cache</strong> - Temps gagné: {transcription.cacheMetadata?.processingTime || 'N/A'}
+                        <CheckCircle className="inline-block w-4 h-4 mr-2" /> Récupéré depuis le cache - Temps gagné: {transcription.cacheMetadata?.processingTime || 'N/A'}
                       </p>
                     </div>
                   )}
@@ -463,7 +462,7 @@ export default function Home() {
                   {/* Performance */}
                   <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                     <p className="text-xs text-gray-600 dark:text-gray-400">
-                      ⏱️ Temps: <strong>{transcription.performance?.totalTimeSeconds}s</strong>
+                      <Clock className="inline-block w-3 h-3 mr-1" /> Temps: <strong>{transcription.performance?.totalTimeSeconds}s</strong>
                     </p>
                   </div>
                 </div>
